@@ -29,7 +29,7 @@
     <string name="get_user_defined_group">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/get_user_defined_group.php</string>
     <string name="get_floracache_species_image">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/upload_images/onetime.php?image_id=</string>
     <string name="get_local_usda_plant_list">http://networkednaturalist.org/python_scripts/cens-dylan/list.py</string>
-    <string name="no_site_no_species_instruction">\nNo sites or plants were found! If this is your first login, please follow the steps below.\n\n (1) Add a monitored BudBurst Observer plant. \nClick MENU-&gt;ADD-&gt;Add Observer Plant \n\n (2) Share an Occasional Observer plant. \nClick MENU-&gt;ADD-&gt;Share Occasional Plant\n\n\n If you already have observed species, then click MENU-&gt;SYNCHRONIZE\n\n</string>
+    <string name="no_site_no_species_instruction">\nNo sites or plants were found! If this is your first login, please follow the steps below.\n\n (1) Add a monitored BudBurst Observer plant. \nClick MENU-&gt;ADD-&gt;Add Single Report Plant \n\n (2) Share a Single Report plant. \nClick MENU-&gt;ADD-&gt;Share Single Report Plant\n\n\n If you already have observed species, then click MENU-&gt;SYNCHRONIZE\n\n</string>
     <string name="Floracache_Easy_Success">Great! You are very close to the species. Proceed to make an observation?</string>
     <string name="instruction_old">You have no plants yet, or you need to synchronize your phone.\n\n (1) Synchronize your phone. \n\n If you just logged in\n\n (2) Start by adding a plant to an existing site (MENU &gt; Add Plant). \n\n (3) Please synchronize your phone with the database (Menu &gt; Synchronize).  If this fails, you may have connectivity problems.</string>
     <string name="instruction">\n\nYou have just logged in and now need to synchronize your phone with the Project Budburst database.\n\nPlease click the Synchronize button if you have connectivity.\n\nYou can find Synchronize button at any page by clicking the MENU button.</string>
@@ -129,7 +129,7 @@
 <string name="GetPhenophase_choose">Choose Phenophase</string>
 <string name="GetPhenophase_noPhoto">(No Photo)</string>
 <string name="Menu_addPlant">Add Monitored Plant</string>
-<string name="Menu_addQCPlant">Add Occasional Plant</string>
+<string name="Menu_addQCPlant">Add Single Report Plant</string>
 <string name="Menu_addSite">Add Site</string>
 <string name="Alert_titleQuestion">Question</string>
 <string name="Start_Shared_Plant">Proceed to next step?</string>
@@ -280,7 +280,7 @@
 <string name="Cannot_Change">You cannot change the name of this species</string>
 <string name="DoSyncFirst_For_UnknownPlant">Please synchronize first if you have unofficial species</string>
 <string name="Monitor_Plant">Project Budburst Observer Plants</string>
-<string name="Quick_Plant">Occasional Observer, Shared Plants</string>
+<string name="Quick_Plant">Single Reports, Shared Plants</string>
 <string name="Done">Quit</string>
 <string name="Item_deleted">Item deleted</string>
 <string name="Not_Finish_GPS">Still getting GPS data...</string>
@@ -305,20 +305,20 @@
 <string name="Help_About_npn_link">http://usanpn.org</string>
 <string name="Help_Main">Main Page Help</string>
 <string name="Help_Main_para1">Main Page Icons are the links to the main functions of the Project BudBurst Mobile app:</string>
-<string name="Help_Main_My_BudBurst_List">My BudBurst List:  A record of all your observe plants.  From this page, you can review your BudBurst Observer and Occasional Observer plants, add new plants, and make new observations.</string>
+<string name="Help_Main_My_BudBurst_List">My BudBurst List:  A record of all your observe plants.  From this page, you can review your BudBurst Observer and Single Report plants, add new plants, and make new observations.</string>
 <string name="Help_Main_Warning">A warning sign will appear when you have plant observations waiting to be sent to the Project BudBurst database (your phone needs to synchronize).</string>
-<string name="Help_Main_QC">Quick Share:  Share one-time, Occasional Observer captures of any plant anywhere and sent it to BudBurst!</string>
+<string name="Help_Main_QC">Quick Share:  Share one-time, Single Report captures of any plant anywhere and sent it to BudBurst!</string>
 <string name="Help_Main_Local_Lists">Local Lists:  Browse lists of plants that are identified as being in your area and make observations.</string>
 <string name="Help_Main_Local_Maps">Local Maps:  Browse a map of all BudBurst (and other) plant observations made by citizen scientists.  Make repeat observations on community plants!</string>
 <string name="Help_Main_News">News:  A list of current news items about plant phenology research, climate, and the environment.</string>
 <string name="Help_Main_PotW">Plant of the Week:  A new plant is featured every week with pictures and interesting. fun facts!</string>
 <string name="Help_MyList">My BudBurst List Help</string>
-<string name="Help_MyList_para1">The List displays your Monitored, Project Budburst Observer plants, your \"Quick Share\" (Occasional Observer) captures, and your progress for observing all plant phenophases.</string>
+<string name="Help_MyList_para1">The List displays your Monitored, Project Budburst Observer plants, your \"Quick Share\" (Single Report) captures, and your progress for observing all plant phenophases.</string>
 <string name="Help_MyList_para2">The List is sorted alphabetically within sites and the number of observations you have made are listed with each plant.</string>
 <string name="Help_MyList_para3">Touch the Plant Thumbnail Image on the left of the list to see a larger image and a description of your plant.</string>
 <string name="Help_MyList_para4">Touch the Plant Name to make a NEW phenophase observation.</string>
 <string name="Help_MyList_para5">To Add a Plant to your List, choose the MENU button on the phone, then one of the two options for either adding a Monitored (regular BudBurst Observer) plant:</string>
-<string name="Help_MyList_para10">Or a Shared (Occasional Observer) plant:</string>
+<string name="Help_MyList_para10">Or a Shared (Single Report) plant:</string>
 <string name="Help_MyList_para6">You will then be asked to choose a plant from the Project BudBurst List or from any of the other available plant lists.</string>
 <string name="Help_MyList_para7">You may choose \"Unknown/Other\" for a plant and write-in the plant name or leave blank to be listed as unknown.  Any photos of this plant that you submit may be placed on a public web page for help in identification.</string>
 <string name="Help_MyList_para8">To Upload Your Observations, choose the MENU button on the phone then:</string>
@@ -328,7 +328,7 @@
 <string name="Help_MyList_1">(1)</string>
 <string name="Help_MyList_2">(2)</string>
 <string name="Help_PlantLists">Plant Lists Help</string>
-<string name="Help_PlantLists_para1">Plant Lists allow you to browse and pick the name of a plant from one of several lists.  When adding to your Monitored, BudBurst Observer plants or during a Quick Share, Occasional Observation, these lists are also used to insert the correct species name for your observation.</string>
+<string name="Help_PlantLists_para1">Plant Lists allow you to browse and pick the name of a plant from one of several lists.  When adding to your Monitored, BudBurst Observer plants or during a Quick Share, Single Report, these lists are also used to insert the correct species name for your observation.</string>
 <string name="Help_PlantLists_para2">By choosing \"Unknown/Other\" you can write-in the name of a plant not found on a list, or leave blank to allow other BudBurst users to help identify the plant.</string>
 <string name="Help_PlantLists_PBB">The Project BudBurst List</string>
 <string name="Help_PlantLists_PBB_para1">This list displays the recommended plants that the BudBurst experts would like you to observe.  You can sort the plants by:\n</string>
@@ -362,7 +362,7 @@
 <string name="Local_BudBurst">Local plants</string>
 <string name="Local_Invasive">Local plants</string>
 <string name="Local_Native">Local plants</string>
-<string name="Help_Main_Floracaching">Floracaching: A set of games designed around your Quick Share, Occasional Observer plants.</string>
+<string name="Help_Main_Floracaching">Floracaching: A set of games designed around your Quick Share, Single Report plants.</string>
 <string name="Skip">Skip</string>
 <string name="Button_GPS">GPS</string>
 <string name="Button_Marker">Marker</string>
