@@ -21,7 +21,7 @@ public class CompassView extends View{
 	private float mDirection = 0;
 	private Paint mPaint;
 	private Paint mMarkerPaint;
-	private Paint mMarkerPaintMyDirection;
+	// private Paint mMarkerPaintMyDirection;
 	private Paint mTextPaint;
 	private Paint mCharPaint;
 	private Paint mLinePaint;
@@ -79,11 +79,13 @@ public class CompassView extends View{
 		mMarkerPaint.setStyle(Paint.Style.STROKE);
 		mMarkerPaint.setShadowLayer(2, 1, 1, res.getColor(R.color.shadow_color));
 		
+		/*
 		mMarkerPaintMyDirection = new Paint(Paint.ANTI_ALIAS_FLAG);
 		mMarkerPaintMyDirection.setColor(res.getColor(R.color.BudBurstBackground));
 		mMarkerPaintMyDirection.setStrokeWidth(4);
 		mMarkerPaintMyDirection.setStyle(Paint.Style.STROKE);
 		mMarkerPaintMyDirection.setShadowLayer(2, 1, 1, res.getColor(R.color.shadow_color));
+		*/
 		//paint.setTextSize(30);
 		
 		mFirstDraw = true;
@@ -131,6 +133,8 @@ public class CompassView extends View{
 			canvas.drawText("N", (float)(cxCompass + getVarX(mDirection) + radiusCompass * Math.sin((double)(-mDirection) * Math.PI/180)), 
 					(float)(cyCompass + getVarY(mDirection) - radiusCompass * Math.cos((double)(-mDirection) * Math.PI/180)), mMarkerPaint);
 			
+			/*
+			// green arrow
 			canvas.drawLine(cxCompass, cyCompass, 
 					cxCompass, cyCompass - radiusCompass,
 					mMarkerPaintMyDirection);
@@ -147,13 +151,14 @@ public class CompassView extends View{
 					cxCompass,
 					cyCompass - radiusCompass,
 					mMarkerPaintMyDirection);
+			*/
 			
 			
 			
 			// black compass line
 			canvas.drawLine(cxCompass-radiusCompass, cyCompass, 
 					cxCompass + radiusCompass, cyCompass, mLinePaint);
-			canvas.drawLine(cxCompass, cyCompass, 
+			canvas.drawLine(cxCompass, cyCompass-radiusCompass, 
 					cxCompass, cyCompass + radiusCompass, mLinePaint);
 			
 			canvas.drawLine((float)(cxCompass + Math.cos(45 * (Math.PI/180))*radiusCompass), (float)(cyCompass - Math.sin(45 * (Math.PI/180))*radiusCompass), 
