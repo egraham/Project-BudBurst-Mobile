@@ -59,13 +59,16 @@ public class FloraCacheMedLevelContent extends Activity {
 	private boolean mIsBound;
 	private double mLatitude 		= 0.0;
 	private double mLongitude 		= 0.0;
+	private String mNotes;
 	private double mTargetLatitude;
 	private double mTargetLongitude;
+	private String mTargetNotes;
 	private int mImageID;
 	
 	private ListView mListView;
 	private TextView mDistanceTxt;
 	private TextView mDirectionTxt;
+	private TextView mDescriptionTxt;
 	private TextView mDegreeTxt;
 	private LinearLayout mLayout;
 	private PBBItems pbbItem;
@@ -129,6 +132,7 @@ public class FloraCacheMedLevelContent extends Activity {
 				
 				mLatitude = extras.getDouble("latitude");
 				mLongitude = extras.getDouble("longitude");
+				mNotes = extras.getString("notes");
 
 				float dist[] = new float[1];
 				Location.distanceBetween(mLatitude, mLongitude, mTargetLatitude, mTargetLongitude, dist);
@@ -137,6 +141,7 @@ public class FloraCacheMedLevelContent extends Activity {
 				mDistanceTxt.setText(String.format("%-20s","+ Distance to plant: ") + String.format("%5dft", (int)(mDistance * 3)));
 				mDirectionTxt.setText(String.format("%-20s","+ Direction to plant: ") + getDirectionStr(bearingTo(mLatitude, mLongitude, mTargetLatitude,  mTargetLongitude))
 						+ " (" + bearingTo(mLatitude, mLongitude, mTargetLatitude,  mTargetLongitude) + "\u00B0" + ")");
+				mDescriptionTxt.setText(mTargetNotes);
 				
 				
 			}
@@ -162,6 +167,9 @@ public class FloraCacheMedLevelContent extends Activity {
 		mTargetLatitude = pbbItem.getLatitude();
 		mTargetLongitude = pbbItem.getLongitude();
 		
+		OneTimeDBHelper oDBH = new OneTimeDBHelper(this);
+		mTargetNotes = oDBH.getFloracacheInfo(this, pbbItem.getFloracacheID()).getFloracacheNotes();
+		
 		setTitleBar();
 		
 		speciesName = (TextView) findViewById(R.id.species_name);
@@ -172,6 +180,7 @@ public class FloraCacheMedLevelContent extends Activity {
 		mLayout = (LinearLayout) findViewById(R.id.text_field_layout);
 		mDistanceTxt = (TextView) findViewById(R.id.textfield1);
 		mDirectionTxt = (TextView) findViewById(R.id.textfield2);
+		mDescriptionTxt = (TextView) findViewById(R.id.textfield3);
 		
 		//HelperFunctionCalls helper = new HelperFunctionCalls();
 		//helper.showSpeciesThumbNail(this, pbbItem.getCategory(), pbbItem.getSpeciesID(), pbbItem.getScienceName(), imageView);
