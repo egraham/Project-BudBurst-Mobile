@@ -1122,9 +1122,11 @@ public class PBBPlantList extends ListActivity {
 						icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.unsynced));
 					}
 					
+					/*
 					if(arSrc.get(position).getIsFloracache() != 0) {
 						icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.is_floracache));
 					}
+					*/
 					
 					break;
 					
@@ -1205,7 +1207,11 @@ public class PBBPlantList extends ListActivity {
 		
 			
 			TextView textName = (TextView)convertView.findViewById(R.id.commonname);
-			textName.setText(arSrc.get(position).getCommonName());
+			String common_name_with_fc_status = arSrc.get(position).getCommonName();
+			if(arSrc.get(position).getIsFloracache() != 0) {
+				common_name_with_fc_status = "[FC] " + common_name_with_fc_status;
+			}
+			textName.setText(common_name_with_fc_status);
 			
 			TextView textDesc = (TextView)convertView.findViewById(R.id.speciesname);
 			if(arSrc.get(position).getMonitor()) {
