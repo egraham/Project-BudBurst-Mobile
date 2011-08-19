@@ -132,7 +132,6 @@ public class MapViewMain extends MapActivity{
 	private static final int GET_OTHERS_OBSERVATION = 1;
 	private static final int GET_GPS_SIGNAL = 10;
 	private static final int GET_MY_OBSERVED_LISTS = 11;
-	private boolean viewFlag = false;
 	
 	private ArrayList<HelperPlantItem> mPlantList;
 	private HelperPlantItem pItem;
@@ -506,14 +505,7 @@ public class MapViewMain extends MapActivity{
 	public boolean onOptionsItemSelected(MenuItem item){
 		switch(item.getItemId()){
 			case 2:
-				if(!viewFlag) {
-					mMapView.setSatellite(true);
-					viewFlag = true;
-				}
-				else {
-					mMapView.setSatellite(false);
-					viewFlag = false;
-				}
+				mMapView.setSatellite(!mMapView.isSatellite());
 				return true;				
 			case 3:
 				getNewGPS();

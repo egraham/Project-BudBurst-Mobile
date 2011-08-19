@@ -51,7 +51,6 @@ public class PBBChangeMyPosition extends MapActivity {
 	private float mAccuracy = 0;
 	private TextView mylocInfo;
 	private boolean first_myLoc = true;
-	private boolean satelliteView = true;
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -70,7 +69,7 @@ public class PBBChangeMyPosition extends MapActivity {
 	    mOver = new MyLocationOverlay(PBBChangeMyPosition.this, mMapView);
 	    mOver.enableMyLocation();
 	    mMapView.getOverlays().add(mOver);
-	    mMapView.setSatellite(true);
+	    mMapView.setSatellite(false);
 	    /*
 	     * Add ItemizedOverlay Overlay
 	     */
@@ -264,14 +263,7 @@ public class PBBChangeMyPosition extends MapActivity {
 				Toast.makeText(PBBChangeMyPosition.this, getString(R.string.Alert_comingSoon), Toast.LENGTH_SHORT).show();
 				return true;
 			case 2:
-				if(!satelliteView) {
-					mMapView.setSatellite(true);
-					satelliteView = true;
-				}
-				else {
-					mMapView.setSatellite(false);
-					satelliteView = false;
-				}
+				mMapView.setSatellite(!mMapView.isSatellite());
 				return true;
 		}
 		return false;

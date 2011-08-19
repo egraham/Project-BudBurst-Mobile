@@ -82,9 +82,6 @@ public class FloraCacheEasyLevel extends MapActivity {
 	private Drawable mMarker;
 	private int mGroupID;
 	
-	private boolean viewFlag = true;
-
-	
 	private ServiceConnection mConnection = new ServiceConnection() {
 
 		public void onServiceConnected(ComponentName className, IBinder binder) {
@@ -185,7 +182,7 @@ public class FloraCacheEasyLevel extends MapActivity {
 		// Set MapView
 		mMapView = (MapView)findViewById(R.id.map);
 		mMapView.setBuiltInZoomControls(true);
-		mMapView.setSatellite(true);
+		mMapView.setSatellite(false);
 		// Set mapController
 		mMapController = mMapView.getController();
 		mMapController.setZoom(12);
@@ -349,15 +346,7 @@ public class FloraCacheEasyLevel extends MapActivity {
 				}
 				return true;
 			case 2:
-				if(!viewFlag) {
-					mMapView.setSatellite(true);
-					viewFlag = true;
-				}
-				else {
-					mMapView.setSatellite(false);
-					viewFlag = false;
-				}
-				
+				mMapView.setSatellite(!mMapView.isSatellite());
 				return true;
 			case 3:
 				refreshList();
