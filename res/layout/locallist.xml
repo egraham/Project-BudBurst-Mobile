@@ -6,7 +6,7 @@
     <TextView
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:text="Please download the local species lists. Press Menu -> Settings -> Download Local Lists"
+		android:text="Please download the local plant lists. Press Menu -> Settings -> Download Local Plants"
 		android:textSize="17sp"
 		android:visibility="gone"
 		android:id="@+id/instruction"
