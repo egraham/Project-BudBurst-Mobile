@@ -9,7 +9,7 @@
   android:orientation="vertical" 
   android:layout_width="fill_parent" android:background="@color/BudBurstLightBackground" android:isScrollContainer="true" android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbars="vertical" android:layout_height="fill_parent">
 	
-	<LinearLayout android:id="@+id/LinearLayout01" android:layout_marginBottom="10px" android:background="@color/BudBurstBackground" android:layout_height="wrap_content" android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent">
+	<LinearLayout android:id="@+id/LinearLayout01" android:layout_marginBottom="10px" android:background="@color/BudBurstBackground" android:layout_height="wrap_content" android:gravity="left" android:orientation="vertical" android:layout_width="fill_parent">
 		<ImageView android:src="@drawable/header_help" android:scaleType="fitCenter" android:paddingTop="5dp" android:layout_height="wrap_content" android:id="@+id/ImageView01" android:layout_width="wrap_content"></ImageView>
 	</LinearLayout>
 	
