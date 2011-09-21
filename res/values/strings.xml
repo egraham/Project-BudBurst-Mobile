@@ -9,7 +9,7 @@
     <string name="get_observation_URL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/phone_service.php?get_my_obs</string>
     <string name="get_onetimeob_others">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/get_onetime_otherusers_observation.php</string>
     <string name="authentication_URL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/phone_service.php?authentication</string>
-    <string name="authentication">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/phone_authorization</string>
+    <string name="authentication">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/phone_authorization.php</string>
     <string name="get_floracaching_lists">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/get_floracaching_list.php</string>
     <string name="get_floracaching_plant_lists">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/get_floracaching_plant_lists.php</string>
     <string name="user_plant_lists_image">http://networkednaturalist.org/User_Plant_Lists_Images/</string>
