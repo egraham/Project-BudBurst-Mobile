@@ -12,6 +12,12 @@
 
 ## Changelog
 
+* 2.1.0 (9/22/11)
+  * Updated user interface artwork
+  * Updated wording in the user interface
+  * Allowed the app to run on devices with large screens (e.g. tablets)
+  * Minor bugfixes and usability improvements
+  * General development-related maintenance
 * 2.0.0 (8/15/11)
   * Transitioned maintainership of the project from [Kyungsik Han](mailto:zenithhan@gmail.com) to [Dylan Vassallo](mailto:dylanvassallo@gmail.com). The principal investigator is [Eric Graham](mailto:egraham@cens.ucla.edu).
   * Open sourced the codebase on GitHub.
