@@ -15,3 +15,11 @@
 * 2.0.0 (8/15/11)
   * Transitioned maintainership of the project from [Kyungsik Han](mailto:zenithhan@gmail.com) to [Dylan Vassallo](mailto:dylanvassallo@gmail.com). The principal investigator is [Eric Graham](mailto:egraham@cens.ucla.edu).
   * Open sourced the codebase on GitHub.
+
+## Issues and enhancements
+
+The [GitHub issue tracker](https://github.com/dylanvee/Project-BudBurst-Mobile/issues?sort=created&direction=desc&state=open) is an up-to-date list of known issues and planned enhancements.
+
+## Development builds
+
+After any significant changes are made, an APK will be uploaded to the [Downloads](https://github.com/dylanvee/Project-BudBurst-Mobile/downloads) section of the project. Please note that these development APKs are intended for beta testing only and may not play nicely with the stable version of PBB on your device. 
