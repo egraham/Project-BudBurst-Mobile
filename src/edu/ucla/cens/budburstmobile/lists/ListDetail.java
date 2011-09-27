@@ -605,12 +605,12 @@ public class ListDetail extends Activity {
 						mProtocolID = HelperValues.GRASSES;
 					}
 					else if(category[which].equals("Deciduous Trees and Shrubs")) {
-						cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.DECIDUOUS_TREES + " ORDER BY common_name;",null);
+						cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.DECIDUOUS_TREES + " OR protocol_id=" + HelperValues.DECIDUOUS_TREES_WIND + " ORDER BY common_name;",null);
 						myTitleText.setText(" " + getString(R.string.AddPlant_addDecid));
 						mProtocolID = HelperValues.DECIDUOUS_TREES;
 					}
 					else if(category[which].equals("Evergreen Trees and Shrubs")) {
-						cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.EVERGREEN_TREES + " ORDER BY common_name;",null);
+						cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.EVERGREEN_TREES + " OR protocol_id=" + HelperValues.EVERGREEN_TREES_WIND + " ORDER BY common_name;",null);
 						myTitleText.setText(" " + getString(R.string.AddPlant_addEvergreen));
 						mProtocolID = HelperValues.EVERGREEN_TREES;
 					}
