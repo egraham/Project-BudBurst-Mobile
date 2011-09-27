@@ -258,11 +258,11 @@ public class OneTimePBBLists extends ListActivity{
 							myTitleText.setText(" One Time Observation > Grass");
 						}
 						else if(category[which].equals("Deciduous Trees and Shrubs")) {
-							cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.DECIDUOUS_TREES + " ORDER BY common_name;",null);
+							cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.DECIDUOUS_TREES + " OR protocol_id=" + HelperValues.DECIDUOUS_TREES_WIND + " ORDER BY common_name;",null);
 							myTitleText.setText(" One Time Observation > Deciduous");
 						}
 						else if(category[which].equals("Evergreen Trees and Shrubs")) {
-							cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.EVERGREEN_TREES + " ORDER BY common_name;",null);
+							cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.EVERGREEN_TREES + " OR protocol_id=" + HelperValues.EVERGREEN_TREES_WIND + " ORDER BY common_name;",null);
 							myTitleText.setText(" One Time Observation > Evergreen");
 						}
 						else if(category[which].equals("Conifer")) {
@@ -477,7 +477,13 @@ public class OneTimePBBLists extends ListActivity{
 				case HelperValues.DECIDUOUS_TREES:
 					mProtocolID = HelperValues.QUICK_TREES_AND_SHRUBS;
 					break;
+				case HelperValues.DECIDUOUS_TREES_WIND:
+					mProtocolID = HelperValues.QUICK_TREES_AND_SHRUBS;
+					break;
 				case HelperValues.EVERGREEN_TREES:
+					mProtocolID = HelperValues.QUICK_TREES_AND_SHRUBS;
+					break;
+				case HelperValues.EVERGREEN_TREES_WIND:
 					mProtocolID = HelperValues.QUICK_TREES_AND_SHRUBS;
 					break;
 				case HelperValues.CONIFERS:
