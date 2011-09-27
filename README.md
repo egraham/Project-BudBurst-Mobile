@@ -12,6 +12,8 @@
 
 ## Changelog
 
+* 2.1.1 (9/27/11)
+  * Fixed some display issues resulting from incorrect phenophase data
 * 2.1.0 (9/22/11)
   * Updated user interface artwork
   * Updated wording in the user interface
