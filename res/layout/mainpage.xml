@@ -133,7 +133,7 @@
 					android:layout_width="fill_parent"
 					android:layout_height="fill_parent"
 					android:gravity="center"
-					android:text="Single Report"
+					android:text="BudBurst Maps"
 					android:textColor="@color/main_text"
 					android:textStyle="bold"
 					android:textSize="17sp"
@@ -177,7 +177,7 @@
 					/>
 				</LinearLayout>
 				
-				<!-- Floracaching -->
+				<!-- Weekly Plant -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="fill_parent"		
@@ -185,17 +185,17 @@
 					android:orientation="vertical"
 					android:gravity="center"
 				>
-					<Button
+					<Button 
 						android:layout_width="75dp"
-						android:layout_height="75dp"
-						android:background="@drawable/icon_compass"
-						android:id="@+id/flora"
+						android:layout_height="75dp" 
+						android:background="@drawable/icon_weekly" 
+						android:id="@+id/weekly" 
 					/>
 					<TextView
 						android:layout_width="fill_parent"
 						android:layout_height="fill_parent"
 						android:gravity="center"
-						android:text="Floracache"
+						android:text="@string/Main_weekly"
 						android:textColor="@color/main_text"
 						android:textStyle="bold"
 						android:textSize="17sp"
@@ -232,7 +232,7 @@
 						android:layout_height="fill_parent"
 						android:layout_weight="0.7"
 						android:gravity="center"
-						android:text="Sync"
+						android:text="Plant News"
 						android:textColor="@color/main_text"
 						android:textStyle="bold"
 						android:textSize="17sp"
@@ -240,7 +240,7 @@
 					/>
 				</LinearLayout>
 				
-				<!-- Information -->
+				<!-- Floracaching -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="fill_parent"		
@@ -252,13 +252,13 @@
 						android:layout_width="75dp"
 						android:layout_height="75dp"
 						android:background="@drawable/icon_compass"
-						android:id="@+id/info"
+						android:id="@+id/flora"
 					/>
 					<TextView
 						android:layout_width="fill_parent"
 						android:layout_height="fill_parent"
 						android:gravity="center"
-						android:text="Information"
+						android:text="Floracaching"
 						android:textColor="@color/main_text"
 						android:textStyle="bold"
 						android:textSize="17sp"

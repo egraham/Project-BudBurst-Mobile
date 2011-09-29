@@ -44,7 +44,6 @@ import android.widget.Toast;
 import edu.ucla.cens.budburstmobile.PBBHelpPage;
 import edu.ucla.cens.budburstmobile.PBBMainPage;
 import edu.ucla.cens.budburstmobile.PBBSync;
-import edu.ucla.cens.budburstmobile.mapview.MapViewMain;
 import edu.ucla.cens.budburstmobile.R;
 import edu.ucla.cens.budburstmobile.database.OneTimeDBHelper;
 import edu.ucla.cens.budburstmobile.database.StaticDBHelper;
@@ -52,7 +51,6 @@ import edu.ucla.cens.budburstmobile.database.SyncDBHelper;
 import edu.ucla.cens.budburstmobile.helper.HelperFunctionCalls;
 import edu.ucla.cens.budburstmobile.helper.HelperPlantItem;
 import edu.ucla.cens.budburstmobile.helper.HelperSharedPreference;
-import edu.ucla.cens.budburstmobile.helper.HelperShowAll;
 import edu.ucla.cens.budburstmobile.helper.HelperValues;
 import edu.ucla.cens.budburstmobile.lists.ListDetail;
 import edu.ucla.cens.budburstmobile.onetime.OneTimeMainPage;
@@ -87,12 +85,6 @@ public class PBBPlantList extends ListActivity {
 	private HelperFunctionCalls mHelper;
 	private HashMap<String, Integer> mapUserSiteNameID = new HashMap<String, Integer>();	
 	private ArrayList<HelperPlantItem> mArrPlantItem;
-	
-	
-	//button list menu
-	private Button addRegBtn = null;
-	private Button addSingleBtn = null;
-	private Button mapBtn = null;
 	
 	//MENU contents
 	final private int MENU_ADD_PLANT = 1;
@@ -444,90 +436,6 @@ public class PBBPlantList extends ListActivity {
 			// add ArrayList into the adapter
 			MyListAdapter mylistapdater = new MyListAdapter(this, R.layout.plantlist_item, mArrPlantItem);
 			MyList.setAdapter(mylistapdater);
-			
-			
-			
-			//buton menu list
-			//add a regular observation
-			addRegBtn = (Button)findViewById(R.id.add_reg);
-			addRegBtn.setOnClickListener(new View.OnClickListener(){
-
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub					
-					Intent intent = new Intent(PBBPlantList.this, OneTimeMainPage.class);
-					pbbItem = new PBBItems();
-					intent.putExtra("pbbItem", pbbItem);
-					intent.putExtra("from", HelperValues.FROM_PLANT_LIST);
-					startActivity(intent);
-
-				}		    	
-		    });
-			
-			//add a single observation
-			addSingleBtn = (Button)findViewById(R.id.add_single);
-			addSingleBtn.setOnClickListener(new View.OnClickListener(){
-
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub					
-					new AlertDialog.Builder(PBBPlantList.this)
-					.setTitle(getString(R.string.Menu_addQCPlant))
-					.setMessage(getString(R.string.Start_Shared_Plant))
-					.setPositiveButton(getString(R.string.Button_Photo), new DialogInterface.OnClickListener() {
-						
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
-							/*
-							 * Move to QuickCapture
-							 */
-							Intent intent = new Intent(PBBPlantList.this, QuickCapture.class);
-							pbbItem = new PBBItems();
-							intent.putExtra("pbbItem", pbbItem);
-							intent.putExtra("from", HelperValues.FROM_QUICK_CAPTURE);
-							startActivity(intent);
-						}
-					})
-					.setNeutralButton(getString(R.string.Button_NoPhoto), new DialogInterface.OnClickListener() {
-						
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
-							Intent intent = new Intent(PBBPlantList.this, OneTimeMainPage.class);
-							pbbItem = new PBBItems();
-							pbbItem.setLocalImageName("");
-							intent.putExtra("pbbItem", pbbItem);
-							intent.putExtra("from", HelperValues.FROM_QUICK_CAPTURE);
-							startActivity(intent);
-						}
-					})
-					.setNegativeButton(getString(R.string.Button_Cancel), new DialogInterface.OnClickListener() {
-						
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
-						}
-					})
-					.show();
-
-				}		    	
-		    });
-			
-			//go to map page
-			mapBtn = (Button)findViewById(R.id.map);
-			mapBtn.setOnClickListener(new View.OnClickListener(){
-
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub					
-					Intent intent = new Intent(PBBPlantList.this, MapViewMain.class);
-					intent.putExtra("type", 100);
-					startActivity(intent);
-
-				}		    	
-		    });
-			
 		}
 		catch(Exception e){}
 		finally{
