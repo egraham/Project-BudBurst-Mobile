@@ -161,6 +161,14 @@ public class QuickCapture extends Activity {
 	}
 	
 	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+	        Log.d(this.getClass().getName(), "back button pressed");
+	    }
+	    return super.onKeyDown(keyCode, event);
+	}
+	
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// You can use the requestCode to select between multiple child
 		// activities you may have started. Here there is only one thing
@@ -233,7 +241,9 @@ public class QuickCapture extends Activity {
 				startActivity(intent);
 				
 			}
-		}			
+		}
+		//TODO if something crashes, check here
+		else finish();
 	}
 	
 	static private String hexEncode(byte[] aInput){
