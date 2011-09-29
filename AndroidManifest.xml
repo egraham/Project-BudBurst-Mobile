@@ -54,6 +54,7 @@
 <activity android:name="PBBMainPage" android:theme="@android:style/Theme.Light.NoTitleBar" android:configChanges="orientation|keyboardHidden" android:screenOrientation="portrait"></activity>
 <activity android:name="PBBHelpPage" android:theme="@android:style/Theme.Light.NoTitleBar" android:configChanges="orientation|keyboardHidden"></activity>
 <activity android:name="PBBSplash" android:theme="@android:style/Theme.Light" android:configChanges="orientation|keyboardHidden"></activity>
+<activity android:name="FloraHelp" android:theme="@android:style/Theme.Light" android:configChanges="orientation|keyboardHidden"></activity>
 
 <!-- edu.ucla.cens.budburstmobile.lists package -->
 <activity android:name=".lists.ListUserDefinedSpecies" android:theme="@android:style/Theme.Light" android:configChanges="orientation|keyboardHidden"></activity>
