@@ -35,6 +35,10 @@ public class PBBHelpPage extends Activity {
 		case HelperValues.FROM_ONE_TIME_MAIN:
 			setContentView(R.layout.help_lists);
 			break;
+		case HelperValues.FROM_FLORACACHE:
+			//TODO once Eric gives us the help page for Floracaching, change the layout
+			setContentView(R.layout.help_lists);
+			break;
 		}
 	    // TODO Auto-generated method stub
 	}
