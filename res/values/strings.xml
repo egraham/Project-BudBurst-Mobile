@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Project Budburst</string>
-    <string name="signupURL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/register_mobile</string>
+    <string name="signupURL">http://neoninc.org/budburst/register_mobile.php</string>
     <string name="get_my_species_in_my_station_URL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/phone_service.php?get_my_species_in_my_station</string>
     <string name="get_my_sites_URL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/phone_service.php?get_my_sites</string>
     <string name="get_onetime_plant_URL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/onetime_plant_download.php</string>
