@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Project Budburst</string>
-    <string name="signupURL">http://neoninc.org/budburst/register_mobile.php</string>
+    <string name="signupURL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/register_mobile</string>
     <string name="get_my_species_in_my_station_URL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/phone_service.php?get_my_species_in_my_station</string>
     <string name="get_my_sites_URL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/phone_service.php?get_my_sites</string>
     <string name="get_onetime_plant_URL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/onetime_plant_download.php</string>
@@ -292,7 +292,7 @@
 <string name="Add_Notes">Notes</string>
 <string name="Move_To_Site">Site</string>
 <string name="Help_About_this_project">About this Project</string>
-<string name="Help_About_Version">Version 2.1.1</string>
+<string name="Help_About_Version">Version 2.0</string>
 <string name="Help_About_para1">Project BudBurst is a citizen science campaign for the study of the timing of life cycle events in plants as they relate to the environment.  With the help of volunteers, we wish to understand what \&quot;calendar\&quot; plants use to begin flowering, leafing or reproducing.</string>
 <string name="Help_About_budburst_link">http://BudBurst.org</string>
 <string name="Help_About_para2">This mobile app is a partnership between the National Environmental Observatory Network (NEON) and the Center for Embedded Networked Sensing (CENS) at UCLA.</string>
@@ -301,7 +301,7 @@
 <string name="Help_About_netnat_link">mobile@NetworkedNaturalist.org</string>
 <string name="Help_About_para4">Some of the people who have contributed to this mobile project include:</string>
 <string name="Help_About_para5">Project BudBurst is a proud member of the USA National Phenology Network and as such, providing data to scientists studying phenology is one of our main goals.</string>
-<string name="Help_About_people">Jameel Al-Aziz\nDeborah Estrin\nLisa Gardiner\nEric Graham\nKyung Han\nSandra Henderson\nJinha Kang\nKeith Mayoral\nDylan Vassallo\nDennis Ward\nEric Yuen\n</string>
+<string name="Help_About_people">Jameel Al-Aziz\nDeborah Estrin\nSophie Garrick\nEric Graham\nKyung Han\nSandra Henderson\nJinha Kang\nKeith Mayoral\nDylan Vassallo\nDennis Ward\nEric Yuen\n</string>
 <string name="Help_About_npn_link">http://usanpn.org</string>
 <string name="Help_Main">Main Page Help</string>
 <string name="Help_Main_para1">Main Page Icons are the links to the main functions of the Project BudBurst Mobile app:</string>
@@ -317,11 +317,11 @@
 <string name="Help_MyList_para2">The list is sorted alphabetically within sites and the number of observations you have made are listed with each plant.</string>
 <string name="Help_MyList_para3">Touch the Plant Thumbnail Image on the left of the list to see a larger image and a description of your plant.</string>
 <string name="Help_MyList_para4">Touch the Plant Name to make a NEW phenophase observation.</string>
-<string name="Help_MyList_para5">To Add a Plant to your List, choose the MENU button on the phone, then one of the two options for either adding a Regular Observation:</string>
+<string name="Help_MyList_para5">To Add a Plant to your List, choose the appropriate button on the top of the list, either adding a Regular Observation:</string>
 <string name="Help_MyList_para10">Or a Single Report:</string>
 <string name="Help_MyList_para6">You will then be asked to choose a plant from the Project BudBurst List or from any of the other available plant lists.</string>
 <string name="Help_MyList_para7">You may choose \"Unknown/Other\" for a plant and write-in the plant name or leave blank to be listed as unknown.  Any photos of this plant that you submit may be placed on a public web page for help in identification.</string>
-<string name="Help_MyList_para8">To Upload Your Observations and Reports, choose the MENU button on the phone then:</string>
+<string name="Help_MyList_para8">To Upload Your Observations and Reports, choose Sync on the main page or the MENU button on the phone then:</string>
 <string name="Help_MyList_Sync">Synchronize</string>
 <string name="Help_MyList_para9">This will start sending your observations to the database and also retrieve any observations that you have made on the website and synchronize your phone.</string>
 <string name="Help_MyList_warning">This symbol will appear when you have plant observations waiting to be sent to the database (your phone needs to synchronized with the server).</string>
@@ -336,23 +336,23 @@
 <string name="Help_PlantLists_PBB_para3">\"Groups\", to show only grasses (for example) within all the BudBurst plants.\n</string>
 <string name="Help_PlantLists_PBB_para4">\"All\", to see the entire BudBurst list of recommended plants to observe.\n</string>
 <string name="Help_PlantLists_PBB_para5">\"Local\", to see the subset of recommended plants in your area.\n</string>
-<string name="Help_PlantLists_para3">The lists below are created based on your location, so if the GPS on your pone is turned off you may not see the correct list of weeds, natives, or blooming plants in your area.</string>
-<string name="Help_PlantLists_WI">The Local Invasives List</string>
-<string name="Help_PlantLists_WI_para1">This list is for local weeds in your area.  Any observations you make on plants in the Local Invasives list will also be sent to the \"What\'s Invasive!\" database to help conservation managers and the National Park Service combat invasive plants.  Please visit the What\'s Invasive! website for more information:</string>
-<string name="Help_PlantLists_WI_URL">http://WhatsInvasive.com</string>
+<string name="Help_PlantLists_para3">The Local Lists are created based on your location and need to be downloaded manually. Go to the Settings on the Main Menu and select Download Local Lists.</string>
+<string name="Help_PlantLists_WI">The Local Lists</string>
+<string name="Help_PlantLists_WI_para1">These Local Lists are for local invasive, native, and endangered species in your area.  The list is created with the help of the USDA PLANTS database and is based on your current location.</string>
+<string name="Help_PlantLists_WI_URL"></string>
 <string name="Help_PlantsLists_WB">The Local Blooming List</string>
 <string name="Help_PlantsLists_WB_para1">This list is for plants that are blooming in your area.  The list is created with the help of the National Park Service and the U.S. Department of Agriculture PLANTS database.</string>
 <string name="Help_PlantLists_LNL">The Local Native List</string>
 <string name="Help_PlantLists_LNL_para1">This list is for native plants in your area. The list is also created with the help of the NPS and the USDA PLANTS database.\n</string>
-<string name="Help_PlantLists_User">Lists that occur below these official lists are regional, locally-created plant lists by people who want to target specific types of plants or for community data collection events.  Check them out!</string>
+<string name="Help_PlantLists_User">Lists that occur below these official lists are locally-created plant lists by researchers, teachers, and regular people who want to target specific plants for community data collection.  Check them out!\n\n</string>
 <string name="Preview_Mode">Preview Mode</string>
 <string name="Preview_Mode_Description">In the preview mode, you can see the plant list and make observations, but are not able to upload them to the server.</string>
 <string name="Preview_Mode_Done">Done</string>
 <string name="Done_Quick_Capture">Done Quick Capture</string>
 <string name="AddSite_Finish_GPS">Finish GPS</string>
 <string name="Help_About_NEON_url">http://www.neoninc.org</string>
-<string name="Help_About_para0">Please note: data collected using this mobile app is being temporarily sent to a different location than the official Project BudBurst site!\n\nIf you would like to manage and download your collected data, please visit this link:</string>
-<string name="Help_About_para0_url">http://bit.ly/mobilePBB</string>
+<string name="Help_About_para0">Please note: data collected using this mobile app is being temporarily sent to a different location than the official Project BudBurst site!</string>
+<string name="Help_About_para0_url"></string>
 <string name="InValid_ID_PW">Incorrect Username/Password. Please try again.</string>
 <string name="Menu_Lists">Plant Lists</string>
 <string name="Menu_Maps">Map View</string>
@@ -449,4 +449,6 @@
 <string name="Floracache_Refresh_Button">Refresh the lists</string>
 <string name="Low_GPS_Signal">Low GPS signal, make sure you are in the good connectivity area</string>
 <item type="id" name="app_notification_id"/>
+<string name="Help_Main_Single_Report">Single Report.  Simply tell us the one-time status of a plant you want to report on!</string>
+<string name="Help_Main_Sync">Synchronize.  This function allows you to choose when you want to upload your new observations and download ones you have already made.  Good connectivity is required!</string>
 </resources>
