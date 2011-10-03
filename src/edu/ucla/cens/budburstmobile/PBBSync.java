@@ -200,7 +200,7 @@ public class PBBSync extends Activity{
 	public boolean onCreateOptionsMenu(Menu menu){
 		super.onCreateOptionsMenu(menu);	
 		
-		menu.add(0,MENU_SYNC,0,getString(R.string.Menu_sync)).setIcon(android.R.drawable.ic_menu_rotate);
+		menu.add(0,MENU_SYNC,0,getString(R.string.Menu_sync)).setIcon(R.drawable.ic_menu_refresh);
 			
 		return true;
 	}

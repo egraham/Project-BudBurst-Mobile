@@ -495,7 +495,7 @@ public class MapViewMain extends MapActivity{
 		super.onCreateOptionsMenu(menu);
 		
 		menu.add(0, 2, 0, getString(R.string.PBBMapMenu_changeView)).setIcon(android.R.drawable.ic_menu_mapmode);
-		menu.add(0, 3, 0, getString(R.string.PBBMapMenu_refresh)).setIcon(android.R.drawable.ic_menu_rotate);
+		menu.add(0, 3, 0, getString(R.string.PBBMapMenu_refresh)).setIcon(R.drawable.ic_menu_refresh);
 		menu.add(0, 4, 0, getString(R.string.otherCategoryMap)).setIcon(android.R.drawable.ic_menu_sort_by_size);
 			
 		return true;

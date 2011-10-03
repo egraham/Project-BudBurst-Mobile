@@ -330,7 +330,7 @@ public class PBBMainPage extends Activity {
 		super.onCreateOptionsMenu(menu);
 		
 		menu.add(0, 1, 0, getString(R.string.Menu_help)).setIcon(android.R.drawable.ic_menu_help);
-		menu.add(0, 2, 0, getString(R.string.Menu_sync)).setIcon(android.R.drawable.ic_menu_rotate);
+		menu.add(0, 2, 0, getString(R.string.Menu_sync)).setIcon(R.drawable.ic_menu_refresh);
 		menu.add(0, 3, 0, getString(R.string.Menu_about)).setIcon(android.R.drawable.ic_menu_info_details);
 		//menu.add(0, 4, 0, getString(R.string.Menu_logout)).setIcon(android.R.drawable.ic_menu_close_clear_cancel);
 		menu.add(0, 4, 0, getString(R.string.Menu_settings)).setIcon(android.R.drawable.ic_menu_preferences);
