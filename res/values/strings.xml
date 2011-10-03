@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Project Budburst</string>
-    <string name="signupURL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/register_mobile</string>
+    <string name="signupURL">http://neoninc.org/budburst/register_mobile.php</string>
     <string name="get_my_species_in_my_station_URL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/phone_service.php?get_my_species_in_my_station</string>
     <string name="get_my_sites_URL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/phone_service.php?get_my_sites</string>
     <string name="get_onetime_plant_URL">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/onetime_plant_download.php</string>
@@ -292,7 +292,7 @@
 <string name="Add_Notes">Notes</string>
 <string name="Move_To_Site">Site</string>
 <string name="Help_About_this_project">About this Project</string>
-<string name="Help_About_Version">Version 2.0</string>
+<string name="Help_About_Version">Version 2.1.1</string>
 <string name="Help_About_para1">Project BudBurst is a citizen science campaign for the study of the timing of life cycle events in plants as they relate to the environment.  With the help of volunteers, we wish to understand what \&quot;calendar\&quot; plants use to begin flowering, leafing or reproducing.</string>
 <string name="Help_About_budburst_link">http://BudBurst.org</string>
 <string name="Help_About_para2">This mobile app is a partnership between the National Environmental Observatory Network (NEON) and the Center for Embedded Networked Sensing (CENS) at UCLA.</string>
@@ -301,7 +301,7 @@
 <string name="Help_About_netnat_link">mobile@NetworkedNaturalist.org</string>
 <string name="Help_About_para4">Some of the people who have contributed to this mobile project include:</string>
 <string name="Help_About_para5">Project BudBurst is a proud member of the USA National Phenology Network and as such, providing data to scientists studying phenology is one of our main goals.</string>
-<string name="Help_About_people">Jameel Al-Aziz\nDeborah Estrin\nSophie Garrick\nEric Graham\nKyung Han\nSandra Henderson\nJinha Kang\nKeith Mayoral\nDylan Vassallo\nDennis Ward\nEric Yuen\n</string>
+<string name="Help_About_people">Jameel Al-Aziz\nDeborah Estrin\nSophie Gerrick\nEric Graham\nKyung Han\nSandra Henderson\nJinha Kang\nKeith Mayoral\nDylan Vassallo\nDennis Ward\nEric Yuen\n</string>
 <string name="Help_About_npn_link">http://usanpn.org</string>
 <string name="Help_Main">Main Page Help</string>
 <string name="Help_Main_para1">Main Page Icons are the links to the main functions of the Project BudBurst Mobile app:</string>
