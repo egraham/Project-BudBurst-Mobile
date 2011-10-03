@@ -953,7 +953,7 @@ public class PBBPlantList extends ListActivity {
 		super.onCreateOptionsMenu(menu);
 		menu.add(0, MENU_ADD_PLANT, 0, getString(R.string.Menu_addPlant)).setIcon(android.R.drawable.ic_menu_add);
 		menu.add(0, MENU_ADD_QC_PLANT, 0, getString(R.string.Menu_addQCPlant)).setIcon(android.R.drawable.ic_menu_add);
-		menu.add(0, MENU_SYNC, 0, getString(R.string.Menu_sync)).setIcon(android.R.drawable.ic_menu_rotate);
+		menu.add(0, MENU_SYNC, 0, getString(R.string.Menu_sync)).setIcon(R.drawable.ic_menu_refresh);
 		menu.add(0, MENU_HELP, 0, getString(R.string.Menu_help)).setIcon(android.R.drawable.ic_menu_help);
 			
 		return true;

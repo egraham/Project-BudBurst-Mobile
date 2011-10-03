@@ -337,7 +337,7 @@ public class ListSubCategory extends ListActivity {
 	 */
 	public boolean onCreateOptionsMenu(Menu menu){
 		super.onCreateOptionsMenu(menu);
-		menu.add(0, 1, 0, getString(R.string.Menu_Refresh)).setIcon(android.R.drawable.ic_menu_rotate);
+		menu.add(0, 1, 0, getString(R.string.Menu_Refresh)).setIcon(R.drawable.ic_menu_refresh);
 		return true;
 	}
 	
