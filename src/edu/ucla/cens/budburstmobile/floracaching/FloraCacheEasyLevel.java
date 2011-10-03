@@ -325,7 +325,7 @@ public class FloraCacheEasyLevel extends MapActivity {
 		
 		menu.add(0, 1, 0, getString(R.string.PBBMapMenu_myLocation)).setIcon(android.R.drawable.ic_menu_mylocation);
 		menu.add(0, 2, 0, getString(R.string.PBBMapMenu_changeView)).setIcon(android.R.drawable.ic_menu_mapmode);
-		menu.add(0, 3, 0, getString(R.string.PBBMapMenu_refresh)).setIcon(android.R.drawable.ic_menu_rotate);
+		menu.add(0, 3, 0, getString(R.string.PBBMapMenu_refresh)).setIcon(R.drawable.ic_menu_refresh);
 			
 		return true;
 	}
