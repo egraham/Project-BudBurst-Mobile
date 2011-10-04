@@ -208,7 +208,7 @@
 <string name="AddSite_description">Site Description</string>
 <string name="AddSite_optional">Site Note (optional)</string>
 <string name="Button_save">Done</string>
-<string name="Button_update_GPS">Update GPS</string>
+<string name="Button_update_GPS">Refine Location</string>
 <string name="Button_switch_to_map">Map View</string>
 <string name="WI_Area">Areas with official invasive species lists</string>
 <string name="WI_parks">The seven nearest parks</string>

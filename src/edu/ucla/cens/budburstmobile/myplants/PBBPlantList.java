@@ -723,7 +723,7 @@ public class PBBPlantList extends ListActivity {
 					/**
 					 * if pbb list chosen and 0 < species_id < 77, we don't allow users to change the value
 					 */
-					if((mPosition <= mOnetimeStartPoint - 1) && mArrPlantItem.get(mPosition).getSpeciesID() > 0 && mArrPlantItem.get(mPosition).getSpeciesID() < 77) {
+					if(((mPosition <= mOnetimeStartPoint - 1) && mArrPlantItem.get(mPosition).getSpeciesID() > 0 && mArrPlantItem.get(mPosition).getSpeciesID() < 77) || (mArrPlantItem.get(mPosition).getSpeciesID()!=999)) {
 						Toast.makeText(PBBPlantList.this, getString(R.string.Cannot_Change), Toast.LENGTH_SHORT).show();
 					}
 					else {
