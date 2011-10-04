@@ -126,7 +126,7 @@ public class StaticDBHelper extends SQLiteOpenHelper{
 		};
 	
 	public StaticDBHelper(Context context) {
-		super(context, "staticBudburst.db", null, 1);
+		super(context, "staticBudburst.db", null, 2);
 		mContext = context;
 		// TODO Auto-generated constructor stub
 	}
@@ -381,6 +381,9 @@ public class StaticDBHelper extends SQLiteOpenHelper{
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// TODO Auto-generated method stub
+		
+		Log.i("D", "upgrade staticDBHelper tables");
+		
 		db.execSQL("DROP TABLE IF EXISTS species;");
 		db.execSQL("DROP TABLE IF EXISTS Onetime_Observation;");
 		db.execSQL("DROP TABLE IF EXISTS Phenophase_Protocol_Icon;");
