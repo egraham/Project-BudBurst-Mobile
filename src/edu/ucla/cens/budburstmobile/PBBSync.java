@@ -474,6 +474,7 @@ public class PBBSync extends Activity{
 				else {
 					Intent intent = new Intent(PBBSync.this, HelperShowAll.class);
 					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					intent.putExtra("from", HelperValues.FROM_SYNC);
 					startActivity(intent);
 					finish();
 				}

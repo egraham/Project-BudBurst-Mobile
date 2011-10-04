@@ -214,6 +214,7 @@ public class PBBMainPage extends Activity {
 				// TODO Auto-generated method stub
 				//Toast.makeText(MainPage.this, getString(R.string.Alert_comingSoon), Toast.LENGTH_SHORT).show();
 				Intent intent = new Intent(PBBMainPage.this, HelperShowAll.class);
+				intent.putExtra("from", HelperValues.FROM_MAIN_PAGE); 
 				startActivity(intent);
 
 			}

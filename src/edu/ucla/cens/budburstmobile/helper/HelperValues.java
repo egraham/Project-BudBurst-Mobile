@@ -27,6 +27,7 @@ public class HelperValues {
 	public static final int FROM_PLANT_LIST_ADD_SAMESPECIES = 106;
 	public static final int FROM_QUICK_CAPTURE_ADD_SAMESPECIES = 107;
 	public static final int FROM_SETTINGS = 108;
+	public static final int FROM_SYNC = 109; 
 	public static final int WHATSINVASIVE = 1000;
 	public static final int FROM_PBB_PHENOPHASE = 1000;
 	public static final int FROM_QC_PHENOPHASE = 1001;
