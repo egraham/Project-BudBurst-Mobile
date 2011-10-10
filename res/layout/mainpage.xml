@@ -251,7 +251,7 @@
 					<Button
 						android:layout_width="75dp"
 						android:layout_height="75dp"
-						android:background="@drawable/icon_compass"
+						android:background="@drawable/icon_info"
 						android:id="@+id/info"
 					/>
 					<TextView
