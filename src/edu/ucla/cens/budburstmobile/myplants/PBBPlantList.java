@@ -36,6 +36,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -90,9 +91,9 @@ public class PBBPlantList extends ListActivity {
 	
 	
 	//button list menu
-	private Button addRegBtn = null;
-	private Button addSingleBtn = null;
-	private Button mapBtn = null;
+	private ImageButton addRegBtn = null;
+	private ImageButton addSingleBtn = null;
+	private ImageButton mapBtn = null;
 	
 	//MENU contents
 	final private int MENU_ADD_PLANT = 1;
@@ -449,7 +450,7 @@ public class PBBPlantList extends ListActivity {
 			
 			//buton menu list
 			//add a regular observation
-			addRegBtn = (Button)findViewById(R.id.add_reg);
+			addRegBtn = (ImageButton)findViewById(R.id.add_reg);
 			addRegBtn.setOnClickListener(new View.OnClickListener(){
 
 				@Override
@@ -465,7 +466,7 @@ public class PBBPlantList extends ListActivity {
 		    });
 			
 			//add a single observation
-			addSingleBtn = (Button)findViewById(R.id.add_single);
+			addSingleBtn = (ImageButton)findViewById(R.id.add_single);
 			addSingleBtn.setOnClickListener(new View.OnClickListener(){
 
 				@Override
@@ -515,7 +516,7 @@ public class PBBPlantList extends ListActivity {
 		    });
 			
 			//go to map page
-			mapBtn = (Button)findViewById(R.id.map);
+			mapBtn = (ImageButton)findViewById(R.id.map);
 			mapBtn.setOnClickListener(new View.OnClickListener(){
 
 				@Override
