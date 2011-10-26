@@ -29,7 +29,7 @@
     <string name="get_user_defined_group">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/get_user_defined_group.php</string>
     <string name="get_floracache_species_image">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/upload_images/onetime.php?image_id=</string>
     <string name="get_local_usda_plant_list">http://networkednaturalist.org/python_scripts/cens-dylan/list.py</string>
-    <string name="no_site_no_species_instruction">\nNo sites or plants were found! If this is your first login, please follow the steps below.\n\n (1) Add a Regular Observation. \nClick MENU-&gt;ADD-&gt;Regular Observation \n\n (2) Make a Single Report. \nClick MENU-&gt;ADD-&gt;Single Report\n\n\n If you already have observed species, then click MENU-&gt;SYNCHRONIZE\n\n</string>
+    <string name="no_site_no_species_instruction">\nNo sites or plants were found! If this is your first login, please follow the steps below.\n\n (1) Add a Regular Observation. \nClick Add Regular Observation \n\n (2) Make a Single Report. \nClick Add Single Report\n\n\n If you already have observed species, then click MENU-&gt;SYNCHRONIZE\n\n</string>
     <string name="Floracache_Easy_Success">Great! You are close enough to capture the floracache. Proceed to make a Single Report?</string>
     <string name="instruction_old">You have no plants yet, or you need to synchronize your phone.\n\n (1) Synchronize your phone. \n\n If you just logged in\n\n (2) Start by adding a plant to an existing site (MENU &gt; Add Plant). \n\n (3) Please synchronize your phone with the database (Menu &gt; Synchronize).  If this fails, you may have connectivity problems.</string>
     <string name="instruction">\n\nYou have just logged in and now need to synchronize your phone with the Project Budburst database.\n\nPlease click the Synchronize button if you have connectivity.\n\nYou can find Synchronize button at any page by clicking the MENU button.</string>
@@ -381,7 +381,7 @@
 <string name="Downloading_User_Defined_Lists">Downloading user plant lists</string>
 <string name="List_USDA_PlantLists_title">Local Species</string>
 <string name="List_USDA_PlantLists_content">County-wide species from the USDA</string>
-<string name="List_Budburst">Local BudBurst plants</string>
+<string name="List_Budburst">Official BudBurst plants</string>
 <string name="List_Whatsinvasive">Help locate local invasives</string>
 <string name="List_Whats_endangered">Local endangered species from the USDA</string>
 <string name="List_Whats_poisonous">Local poisonous plants from the USDA</string>
