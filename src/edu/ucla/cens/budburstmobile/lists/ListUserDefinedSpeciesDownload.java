@@ -41,6 +41,7 @@ import edu.ucla.cens.budburstmobile.helper.HelperValues;
 public class ListUserDefinedSpeciesDownload extends AsyncTask<Void, Void, Void>{
 
 	private Context mContext;
+	private HelperSharedPreference mPref;
 	private int mCategory;
 	private NotificationManager notificationMgr = null;
 	private Notification noti = null;
@@ -49,6 +50,7 @@ public class ListUserDefinedSpeciesDownload extends AsyncTask<Void, Void, Void>{
 	public ListUserDefinedSpeciesDownload(Context context, int category) {
 		mContext = context;
 		mCategory = category;
+		mPref = new HelperSharedPreference(mContext);
 	}
 	
 	@Override
@@ -107,7 +109,7 @@ public class ListUserDefinedSpeciesDownload extends AsyncTask<Void, Void, Void>{
 				OneTimeDBHelper onehelper = new OneTimeDBHelper(mContext);
 				onehelper.clearUserDefineListByCategory(mContext, mCategory);
 				onehelper.close();
-				
+				mPref.setPreferencesBoolean(""+mCategory, true);
 				
 				BufferedReader br = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 				String serverResponse = ""; 

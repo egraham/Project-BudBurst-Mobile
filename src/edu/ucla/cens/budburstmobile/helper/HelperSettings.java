@@ -326,7 +326,7 @@ public class HelperSettings extends PreferenceActivity {
 				// TODO Auto-generated method stub
 				
 				new AlertDialog.Builder(HelperSettings.this)
-				.setTitle(getString(R.string.DownLoad_Tree_Lists))
+				.setTitle(getString(R.string.DownLoad_Flora_Lists))
 				.setMessage(getString(R.string.List_ask_connectivity))
 				.setPositiveButton(getString(R.string.Button_yes), new DialogInterface.OnClickListener() {
 					

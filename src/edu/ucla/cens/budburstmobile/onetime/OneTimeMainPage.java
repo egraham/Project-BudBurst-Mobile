@@ -152,6 +152,7 @@ public class OneTimeMainPage extends ListActivity {
 		OneTimeDBHelper oDBH = new OneTimeDBHelper(this);
 		mArr = oDBH.getListGroupItem(this);
 		
+		
 		if(mArr.size() == 0) {
 			iItem = new HelperListItem();
 			iItem.setHeaderText(getString(R.string.List_User_Plant_Header));
@@ -177,8 +178,10 @@ public class OneTimeMainPage extends ListActivity {
 			iItem.setTitle(mArr.get(i).getCategoryName());
 			iItem.setImageURL(String.valueOf(mArr.get(i).getCategoryID()));
 			
-	//		if(mArr.get(i).)
-			iItem.setDescription(mArr.get(i).getDescription());
+			if(mPref.getPreferenceBoolean(""+mArr.get(i).getCategoryID()))
+				iItem.setDescription(mArr.get(i).getDescription());
+			else
+				iItem.setDescription("Not downloaded yet");
 			listArr.add(iItem);
 			
 		}

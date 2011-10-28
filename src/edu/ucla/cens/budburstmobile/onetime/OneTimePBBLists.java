@@ -46,6 +46,7 @@ import edu.ucla.cens.budburstmobile.database.StaticDBHelper;
 import edu.ucla.cens.budburstmobile.database.SyncDBHelper;
 import edu.ucla.cens.budburstmobile.helper.HelperListItem;
 import edu.ucla.cens.budburstmobile.helper.HelperPlantItem;
+import edu.ucla.cens.budburstmobile.helper.HelperSettings;
 import edu.ucla.cens.budburstmobile.helper.HelperValues;
 import edu.ucla.cens.budburstmobile.lists.ListDetail;
 import edu.ucla.cens.budburstmobile.lists.ListGroupItem;
@@ -67,6 +68,7 @@ public class OneTimePBBLists extends ListActivity{
 	private ArrayList<ListGroupItem> mArr = new ArrayList<ListGroupItem>();
 	private MyListAdapterMainPage mylistapdater2;
 	private boolean isUserDefinedListOn = true;
+	private boolean isEmpty = false;
 	
 	private Button topBtn1 = null;
 	private Button topBtn2 = null;
@@ -392,10 +394,11 @@ public class OneTimePBBLists extends ListActivity{
 					mylistapdater2 = new MyListAdapterMainPage(OneTimePBBLists.this, R.layout.onetime_list ,listArr);
 					ListView MyList = getListView();
 					MyList.setAdapter(mylistapdater2);
+					isEmpty = true;
 				}
 				else{
 				mylistapdater = new MyListAdapter(OneTimePBBLists.this, R.layout.plantlist_item2, arPlantList);
-				
+				isEmpty = false;
 				MyList = getListView(); 
 				MyList.setAdapter(mylistapdater);
 				}
@@ -502,11 +505,17 @@ public class OneTimePBBLists extends ListActivity{
 
 		mCurrentPosition = position;
 		
+		if(isEmpty){
+			Intent intent = new Intent(OneTimePBBLists.this, HelperSettings.class);
+			intent.putExtra("from", HelperValues.FROM_PLANT_LIST);
+			startActivity(intent);
+		}
+		
 		/*
 		 * If user chooses Unknown/Plant, show the popup dialog adding common name.
 		 */
-		
-		
+		else
+		{
 		if(arPlantList.get(position).getSpeciesID() == HelperValues.UNKNOWN_SPECIES) {
 			dialog = new Dialog(OneTimePBBLists.this);
 			
@@ -682,6 +691,6 @@ public class OneTimePBBLists extends ListActivity{
 			}
 		}
 		}
-	
+	}
 }
 

@@ -420,6 +420,7 @@
 <string name="Floracache_Hard_Refresh">Refresh the list</string>
 <string name="go_to_settings_page">Please download the species list first.\nTo download the lists, Go to the \'Settings\' page</string>
 <string name="cateogory_text">Category</string>
+<string name="DownLoad_Flora_Lists">Download floracaching lists</string>
 <string name="User_Defined_Lists_Group">Select User-Defined Lists</string>
 <string name="Alt_User_Defined_Group">Refresh the user defined groups...</string>
 <string name="Floracache_List_Download_Text">Start downloading - Floracache Lists</string>
