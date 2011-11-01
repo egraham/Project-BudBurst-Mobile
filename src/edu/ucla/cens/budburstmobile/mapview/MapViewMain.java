@@ -524,13 +524,13 @@ public class MapViewMain extends MapActivity{
 		// my observations
 		ListGroupItem gItem = new ListGroupItem();
 		gItem.setCategoryID(0);
-		gItem.setCategoryName("My Observation");
+		gItem.setCategoryName(getString(R.string.My_observations));
 		mArr.add(gItem);
 		
 		// others' observations
 		gItem = new ListGroupItem();
 		gItem.setCategoryID(1);
-		gItem.setCategoryName("Others' Observation");
+		gItem.setCategoryName(getString(R.string.Others_observations));
 		mArr.add(gItem);
 		
 		// add quick capture observations into the array

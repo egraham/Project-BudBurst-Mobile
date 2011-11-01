@@ -136,6 +136,8 @@
 <string name="Alert_logout">You might lose your unsynchronized data if you log out.  Are you sure you want to log out?</string>
 <string name="Button_yes">Yes</string>
 <string name="Button_no">No</string>
+<string name="My_observations">My Observations</string>
+<string name="Others_observations">Others\' Observations</string>
 <string name="Alert_checkConnectivity">Please check your network connectivity and try again.</string>
 <string name="Alert_uploadingPlants">Uploading plants...</string>
 <string name="Alert_uploadingObs">Uploading observations...</string>
