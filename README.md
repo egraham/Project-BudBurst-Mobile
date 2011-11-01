@@ -12,6 +12,12 @@
 
 ## Changelog
 
+* 2.2.0 (11/1/11)
+  * Switched to a new NEON-hosted registration site
+  * Major user interface enhancements
+  * Improved help screens
+  * Improved handling of edge cases related to location services
+  * Many additional bug fixes and enhancements
 * 2.1.1 (9/27/11)
   * Fixed some display issues resulting from incorrect phenophase data
 * 2.1.0 (9/22/11)
