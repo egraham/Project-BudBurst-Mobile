@@ -161,21 +161,37 @@ public class PBBSync extends Activity{
 		mProgress.setProgress(0);
 	}
 
-    @Override
+	// or when user press back button
+	// when you hold the button for 3 sec, the app will be exited
+	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if(keyCode == event.KEYCODE_BACK) {
-			boolean flag = false;
-			if(event.getRepeatCount() == 3) {
-				Intent service = new Intent(PBBSync.this, HelperBackgroundService.class);
-			    stopService(service);
-				finish();
-				return true;
-			}
-			else if(event.getRepeatCount() == 0 && flag == false){
-				Toast.makeText(PBBSync.this, getString(R.string.Alert_holdBackExit), Toast.LENGTH_SHORT).show();
-				flag = true;
-			}
+
+			new AlertDialog.Builder(PBBSync.this)
+			.setTitle(getString(R.string.Exit_Application_title))
+			.setIcon(R.drawable.pbb_icon_small)
+			.setMessage(getString(R.string.Exit_Application))
+			.setPositiveButton(getString(R.string.Button_yes), new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					
+					Intent service = new Intent(PBBSync.this, HelperBackgroundService.class);
+				    stopService(service);
+				    
+					finish();
+				}
+			})
+			.setNegativeButton(getString(R.string.Button_no), new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					// nothing to do
+				}
+			})
+			.show();
 		}
+		
 		return false;
 	}
     
@@ -458,6 +474,7 @@ public class PBBSync extends Activity{
 				else {
 					Intent intent = new Intent(PBBSync.this, HelperShowAll.class);
 					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					intent.putExtra("from", HelperValues.FROM_SYNC);
 					startActivity(intent);
 					finish();
 				}

@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-
+    
+	<!-- header 
 	<LinearLayout
 		android:id="@+id/logo_layout"
 		android:layout_width="fill_parent"
@@ -16,23 +17,142 @@
 			android:layout_height="wrap_content" 
 			android:src="@drawable/header">
 		</ImageView>
-	</LinearLayout>     
+	</LinearLayout>    --> 
+	<!-- /header -->
+		 
+		 <LinearLayout
+		android:id="@+id/border_one"
+		android:layout_below="@id/logo_layout"
+		android:layout_width="fill_parent"
+		android:layout_height="10sp"
+		android:gravity="center_vertical|center_horizontal" 
+		android:orientation="horizontal"
+		android:background="@color/BudBurstBackground"/>
+		
+		 
+	<LinearLayout
+		android:id="@+id/button_row"
+		android:layout_below="@id/border_one"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center_vertical|center_horizontal" 
+		android:orientation="horizontal"
+		android:background="#FFFFFF">
+			<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"			
+					android:layout_weight="0.5"
+					android:orientation="vertical"
+					android:id="@+id/add_reg_layout"
+					android:layout_below="@id/logo_layout"
+					android:gravity="center"
+					android:background="#FFFFFF"
+					android:layout_marginTop="5sp"
+				>
+					<ImageButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="@drawable/add_reg"
+						android:id="@+id/add_reg"/>
+						
+					<TextView
+						android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:gravity="center"
+						android:text="Add Regular"
+						android:textColor="@color/main_text"
+						android:textStyle="bold"
+						android:textSize="15sp"
+						android:paddingBottom="12dp"
+					/>	
+					</LinearLayout>
+					
+					<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"			
+					android:layout_weight="0.5"
+					android:orientation="vertical"
+					android:id="@+id/add_single_layout"
+					android:layout_below="@id/logo_layout"
+					android:gravity="center"
+					android:layout_marginTop="5sp"
+					android:background="#FFFFFF"
+				>
+					<ImageButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="@drawable/add_trans"
+		
+						android:id="@+id/add_single"/>
+						
+					<TextView
+						android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:gravity="center"
+						android:text="Add Single"
+						android:textColor="@color/main_text"
+						android:textStyle="bold"
+						android:textSize="15sp"
+						android:paddingBottom="12dp"
+					/>	
+					</LinearLayout>
+				
+			<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"			
+					android:layout_weight="0.5"
+					android:orientation="vertical"
+					android:id="@+id/view_map_layout"
+					android:background="#FFFFFF"
+					
+					android:layout_below="@id/logo_layout"
+					android:gravity="center"
+				>
+					<ImageButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="@drawable/map_view"
+						android:layout_marginTop="0sp"
+						android:id="@+id/map"/>
+						
+					<TextView
+						android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:gravity="center"
+						android:text="View Map"
+						android:layout_marginTop="0sp"
+						android:textColor="@color/main_text"
+						android:textStyle="bold"
+						android:textSize="15sp"
+						
+					/>	
+					</LinearLayout>
+	</LinearLayout>
+		 <LinearLayout
+		android:id="@+id/border_two"
+		android:layout_below="@id/button_row"
+		android:layout_width="fill_parent"
+		android:layout_height="10sp"
+		android:gravity="center_vertical|center_horizontal" 
+		android:orientation="horizontal"
+		android:background="@color/BudBurstBackground"/>
+		 
 		 
 	<TextView
 		android:id="@+id/instruction"
-		android:layout_below="@+id/logo_layout"
+		android:layout_below="@+id/border_two"
 		android:textSize="17dp"
 		android:text="@string/no_site_no_species_instruction"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:layout_margin="10dp"
+		android:layout_margin="7dp"
 		android:visibility="gone"		
 		>
 	</TextView>
 	
 	<ListView
 		android:id="@android:id/list"
-		android:layout_below="@+id/logo_layout"
+		android:layout_below="@+id/border_two"
 		android:layout_above="@+id/footer_item"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"/>
@@ -61,5 +181,3 @@
 	<!-- End Summary footer -->
 			
 </RelativeLayout>
-
-

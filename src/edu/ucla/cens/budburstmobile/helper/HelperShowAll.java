@@ -35,6 +35,7 @@ public class HelperShowAll extends Activity implements OnClickListener{
 	private Animation slideLeftOut;
 	private Animation slideRightIn;
 	private Animation slideRightOut;
+	private int mPreviousActivity = 0; 
 	    
 	    
 	/** Called when the activity is first created. */
@@ -43,6 +44,10 @@ public class HelperShowAll extends Activity implements OnClickListener{
 	    super.onCreate(savedInstanceState);
 	    
 	    setContentView(R.layout.first_help);
+	    
+	    // Check what activity you came from
+	    Intent parent_intent = getIntent(); 
+	    mPreviousActivity = parent_intent.getExtras().getInt("from"); 
 	    
 	    // TODO Auto-generated method stub
 	    vf = (ViewFlipper) findViewById(R.id.viewflipper);
@@ -94,67 +99,83 @@ public class HelperShowAll extends Activity implements OnClickListener{
 		// TODO Auto-generated method stub
 		if(v == next) {
 			page_num++;
-        	vf.setInAnimation(slideLeftIn);
-        	vf.setOutAnimation(slideLeftOut);
-        	vf.showNext();
+			vf.setInAnimation(slideLeftIn);
+			vf.setOutAnimation(slideLeftOut);
+			vf.showNext();
 		}
 		if(v == previous) {
 			page_num--;
-        	vf.setInAnimation(slideRightIn);
-        	vf.setOutAnimation(slideRightOut);
-        	vf.showPrevious();
+			vf.setInAnimation(slideRightIn);
+			vf.setOutAnimation(slideRightOut);
+			vf.showPrevious();
 		}
 		if(v == done) {
-			new AlertDialog.Builder(HelperShowAll.this)
-			.setTitle(getString(R.string.Move_to_Settings_title))
-			.setIcon(R.drawable.pbb_icon_small)
-			.setMessage(getString(R.string.Move_to_Settings))
-			.setPositiveButton(getString(R.string.Button_yes), new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					// TODO Auto-generated method stub
-					// move to settings page
-					Intent intent = new Intent(HelperShowAll.this, HelperSettings.class);
-					intent.putExtra("from", HelperValues.FROM_MAIN_PAGE);
-					startActivity(intent);
-					
-					finish();
-				}
-			})
-			.setNegativeButton(getString(R.string.Button_no), new DialogInterface.OnClickListener() {
-				
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					// TODO Auto-generated method stub
-					// move to main page
-					Intent intent = new Intent(HelperShowAll.this, PBBMainPage.class);
-					startActivity(intent);
-					finish();
-				}
-			})
-			.show();
-			
-			
+			if (mPreviousActivity == HelperValues.FROM_SYNC) {
+				new AlertDialog.Builder(HelperShowAll.this)
+				.setTitle(getString(R.string.Move_to_Settings_title))
+				.setIcon(R.drawable.pbb_icon_small)
+				.setMessage(getString(R.string.Move_to_Settings))
+				.setPositiveButton(getString(R.string.Button_yes), new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						// move to settings page
+						Intent intent = new Intent(HelperShowAll.this, HelperSettings.class);
+						intent.putExtra("from", HelperValues.FROM_MAIN_PAGE);
+						startActivity(intent);
+
+						finish();
+					}
+				})
+				.setNegativeButton(getString(R.string.Button_no), new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						// move to main page
+						Intent intent = new Intent(HelperShowAll.this, PBBMainPage.class);
+						intent.putExtra("from", HelperValues.FROM_MAIN_PAGE); 
+						startActivity(intent);
+						finish();
+					}
+				})
+				.show();
+			} else {
+		//		Intent intent = new Intent(HelperShowAll.this, PBBMainPage.class);
+		//		intent.putExtra("from", HelperValues.FROM_MAIN_PAGE); 
+		//		startActivity(intent);
+				finish();
+			}
+
+
 		}
 	}
+
 	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if(keyCode == event.KEYCODE_BACK) {
-			boolean flag = false;
-			if(event.getRepeatCount() == 3) {
-				/*
-				 * Stop the service if it is still working
-				 */
-				Intent service = new Intent(HelperShowAll.this, HelperBackgroundService.class);
-			    stopService(service);
-			    
-				finish();
-				return true;
-			}
-			else if(event.getRepeatCount() == 0 && flag == false){
-				Toast.makeText(HelperShowAll.this, getString(R.string.Alert_holdBackExit), Toast.LENGTH_SHORT).show();
-				flag = true;
+			if (mPreviousActivity == HelperValues.FROM_SYNC) {
+				boolean flag = false;
+				if(event.getRepeatCount() == 3) {
+					/*
+					 * Stop the service if it is still working
+					 */
+					Intent service = new Intent(HelperShowAll.this, HelperBackgroundService.class);
+					stopService(service);
+
+					finish();
+					return true;
+				}
+				else if(event.getRepeatCount() == 0 && flag == false){
+					Toast.makeText(HelperShowAll.this, getString(R.string.Alert_holdBackExit), Toast.LENGTH_SHORT).show();
+					flag = true;
+				}
+			} else {
+	//			Intent intent = new Intent(HelperShowAll.this, PBBMainPage.class);
+		//		intent.putExtra("from", HelperValues.FROM_MAIN_PAGE); 
+			//	startActivity(intent);
+				finish();	
 			}
 		}
 		

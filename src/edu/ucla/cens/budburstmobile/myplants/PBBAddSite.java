@@ -333,7 +333,7 @@ public class PBBAddSite extends Activity{
 				
 				// TODO Auto-generated method stub
 				if(!fromUpdateGPS) {
-					UpdateGPS.setText("Finish GPS");
+					UpdateGPS.setText("Finish \n GPS");
 					Toast.makeText(PBBAddSite.this, "GPS on", Toast.LENGTH_SHORT).show();
 					fromUpdateGPS = true;
 					// start Service
@@ -345,7 +345,7 @@ public class PBBAddSite extends Activity{
 					registerReceiver(gpsReceiver, inFilter);
 				}
 				else {
-					UpdateGPS.setText("Update GPS");
+					UpdateGPS.setText("Update Location GPS");
 					Toast.makeText(PBBAddSite.this, "GPS off", Toast.LENGTH_SHORT).show();
 					fromUpdateGPS = false;
 	

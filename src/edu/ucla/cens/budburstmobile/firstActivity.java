@@ -99,20 +99,12 @@ public class firstActivity extends Activity{
 		 	downloadPlantLists();
 		}
 		else {
-			if(!mLocManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) {
-		    	new AlertDialog.Builder(this)
-		    	.setTitle(getString(R.string.Turn_on_GPS))
-		    	.setMessage(getString(R.string.Update_Database_Table))
-		    	.setPositiveButton(getString(R.string.Redirect), new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						Intent myIntent = new Intent(Settings.ACTION_SECURITY_SETTINGS);
-			        	startActivity(myIntent);
-					}
-				})
-				.show();
+			
+			
+			if(!mLocManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)
+					&&(mPref.getPreferenceString("Username", "").equals("")) 
+					&& mPref.getPreferenceString("Password", "").equals("")) {
+				alert_no_gps();
 		    }
 		    else {
 	
@@ -128,6 +120,38 @@ public class firstActivity extends Activity{
 		    }		
 		}
 	}
+	private void alert_no_gps() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("You need GPS to run some parts of this application. Do you want to enable it? (You don't have to do this now)")
+               .setCancelable(false)
+               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, final int id) {
+                        firstActivity.this.startActivityForResult(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS), 3);
+        				/* new Handler().postDelayed(new Runnable(){
+        			    	public void run() {
+        			    		//checkUpdate();
+        			    		Intent intent = new Intent(firstActivity.this, PBBSplash.class);
+        						finish();
+        						startActivity(intent);
+        			    	}
+        			    }, 2000); */
+                    }
+                })
+               .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, final int id) {
+        				new Handler().postDelayed(new Runnable(){
+        			    	public void run() {
+        			    		//checkUpdate();
+        			    		Intent intent = new Intent(firstActivity.this, PBBSplash.class);
+        						finish();
+        						startActivity(intent);
+        			    	}
+        			    }, 0);
+                    }
+                });
+        final AlertDialog alert = builder.create();
+        alert.show();
+    }
 	
 	private void downloadPlantLists() {
 		

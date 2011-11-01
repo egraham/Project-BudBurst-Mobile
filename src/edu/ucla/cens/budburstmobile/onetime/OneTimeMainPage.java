@@ -133,14 +133,16 @@ public class OneTimeMainPage extends ListActivity {
 		 *  > 10 : User Defined Lists
 		 *  and more later.
 		 */
-		iItem.setHeaderText(getString(R.string.List_Official_Header));
+		iItem.setHeaderText(getString(R.string.List_Official_BudBurst));
+	//	iItem.setHeaderText("none");
 		iItem.setTitle(getString(R.string.List_Project_Budburst_title));
 		iItem.setImageURL("pbb_icon_main2");
 		iItem.setDescription(getString(R.string.List_Budburst));
 		listArr.add(iItem);
 		
 		iItem = new HelperListItem();
-		iItem.setHeaderText("none");
+		iItem.setHeaderText(getString(R.string.List_Official_Header));
+	//	iItem.setHeaderText("none");
 		iItem.setTitle(getString(R.string.List_USDA_PlantLists_title));
 		iItem.setImageURL("poisonous");
 		iItem.setDescription(getString(R.string.List_USDA_PlantLists_content));
@@ -149,6 +151,7 @@ public class OneTimeMainPage extends ListActivity {
 		// user defined lists - dynamically added. 
 		OneTimeDBHelper oDBH = new OneTimeDBHelper(this);
 		mArr = oDBH.getListGroupItem(this);
+		
 		
 		if(mArr.size() == 0) {
 			iItem = new HelperListItem();
@@ -174,7 +177,11 @@ public class OneTimeMainPage extends ListActivity {
 			iItem.setHeaderText(header);
 			iItem.setTitle(mArr.get(i).getCategoryName());
 			iItem.setImageURL(String.valueOf(mArr.get(i).getCategoryID()));
-			iItem.setDescription(mArr.get(i).getDescription());
+			
+			if(mPref.getPreferenceBoolean(""+mArr.get(i).getCategoryID()))
+				iItem.setDescription(mArr.get(i).getDescription());
+			else
+				iItem.setDescription("Not downloaded yet");
 			listArr.add(iItem);
 			
 		}
@@ -193,21 +200,23 @@ public class OneTimeMainPage extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id){
 	
 		if(position == 0) {
-			if(mPreviousActivity == HelperValues.FROM_PLANT_LIST) {
+	/*		if(mPreviousActivity == HelperValues.FROM_PLANT_LIST) {
 				Intent intent = new Intent(OneTimeMainPage.this, PBBAddPlant.class);
 				pbbItem.setCategory(HelperValues.LOCAL_BUDBURST_LIST);
-				
+				intent.putExtra("from", mPreviousActivity);
 				intent.putExtra("pbbItem", pbbItem);
 				startActivity(intent);
 			} 
 			// else from Quick_Capture...
-			else {
+			 * */
+			
+		//	else {
 				Intent intent = new Intent(OneTimeMainPage.this, OneTimePBBLists.class);
 				pbbItem.setCategory(HelperValues.LOCAL_BUDBURST_LIST);
 				intent.putExtra("pbbItem", pbbItem);
 				intent.putExtra("from", mPreviousActivity);
 				startActivity(intent);
-			}
+		//	}
 		}
 		else if(position == 1) {
 			showLocalListDialog();

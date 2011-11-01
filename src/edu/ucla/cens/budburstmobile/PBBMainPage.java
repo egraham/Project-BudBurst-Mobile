@@ -7,9 +7,11 @@ import java.io.InputStream;
 import edu.ucla.cens.budburstmobile.database.OneTimeDBHelper;
 import edu.ucla.cens.budburstmobile.database.StaticDBHelper;
 import edu.ucla.cens.budburstmobile.database.SyncDBHelper;
+import edu.ucla.cens.budburstmobile.utils.PBBItems;
 import edu.ucla.cens.budburstmobile.floracaching.FloraCacheEasyLevel;
 import edu.ucla.cens.budburstmobile.floracaching.FloraCacheMain;
 import edu.ucla.cens.budburstmobile.helper.HelperBackgroundService;
+import edu.ucla.cens.budburstmobile.helper.HelperShowAll;
 import edu.ucla.cens.budburstmobile.helper.HelperFunctionCalls;
 import edu.ucla.cens.budburstmobile.helper.HelperSettings;
 import edu.ucla.cens.budburstmobile.helper.HelperSharedPreference;
@@ -19,6 +21,7 @@ import edu.ucla.cens.budburstmobile.lists.ListUserDefinedSpecies;
 import edu.ucla.cens.budburstmobile.mapview.MapViewMain;
 import edu.ucla.cens.budburstmobile.myplants.PBBPlantList;
 import edu.ucla.cens.budburstmobile.onetime.OneTimeMainPage;
+import edu.ucla.cens.budburstmobile.utils.PBBItems;
 import edu.ucla.cens.budburstmobile.utils.QuickCapture;
 import edu.ucla.cens.budburstmobile.weeklyplant.WeeklyPlant;
 import android.app.Activity;
@@ -49,12 +52,13 @@ public class PBBMainPage extends Activity {
 	private ImageButton myPlantBtn = null;
 	private Button oneTimeBtn = null;
 	private Button myResultBtn = null;
-	private Button mapBtn = null;
-	private Button newsBtn = null;
-	private Button weeklyBtn = null;
+	private Button singleReportBtn = null;
+	private Button syncBtn = null;
+	private Button infoBtn = null;
 	private Button floraBtn = null;
 	private TextView mUserInfo = null;
 	private HelperSharedPreference mPref;
+	private PBBItems pbbItem;
 	private String mUsername;
 	/** Called when the activity is first created. */
 	@Override
@@ -129,46 +133,95 @@ public class PBBMainPage extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				//Toast.makeText(MainPage.this, getString(R.string.Alert_comingSoon), Toast.LENGTH_SHORT).show();
-				startActivity(new Intent(PBBMainPage.this, ListMain.class));
+			//	startActivity(new Intent(PBBMainPage.this, ListMain.class));
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(PBBMainPage.this, OneTimeMainPage.class);
+				pbbItem = new PBBItems();
+				pbbItem.setLocalImageName("");
+				intent.putExtra("pbbItem", pbbItem);
+				intent.putExtra("from", HelperValues.FROM_PLANT_LIST);
+				startActivity(intent);
 			}
 	    });
 	    
 	    // plant maps button
-	    mapBtn = (Button)findViewById(R.id.map);
-	    mapBtn.setOnClickListener(new View.OnClickListener(){
+	    singleReportBtn = (Button)findViewById(R.id.map);
+	    singleReportBtn.setOnClickListener(new View.OnClickListener(){
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				//Toast.makeText(MainPage.this, getString(R.string.Alert_comingSoon), Toast.LENGTH_SHORT).show();
-				Intent intent = new Intent(PBBMainPage.this, MapViewMain.class);
-				intent.putExtra("type", 100);
+				new AlertDialog.Builder(PBBMainPage.this)
+				.setTitle(getString(R.string.Menu_addQCPlant))
+				.setMessage(getString(R.string.Start_Shared_Plant))
+				.setPositiveButton(getString(R.string.Button_Photo), new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						/*
+						 * Move to QuickCapture
+						 */
+						Intent intent = new Intent(PBBMainPage.this, QuickCapture.class);
+						pbbItem = new PBBItems();
+						intent.putExtra("pbbItem", pbbItem);
+						intent.putExtra("from", HelperValues.FROM_QUICK_CAPTURE);
+						startActivity(intent);
+					}
+				})
+				.setNeutralButton(getString(R.string.Button_NoPhoto), new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						Intent intent = new Intent(PBBMainPage.this, OneTimeMainPage.class);
+						pbbItem = new PBBItems();
+						pbbItem.setLocalImageName("");
+						intent.putExtra("pbbItem", pbbItem);
+						intent.putExtra("from", HelperValues.FROM_QUICK_CAPTURE);
+						startActivity(intent);
+					}
+				})
+				.setNegativeButton(getString(R.string.Button_Cancel), new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+					}
+				})
+				.show();
+
+			}
+	    	
+	    });
+	    
+	    // Sync button
+	    syncBtn = (Button)findViewById(R.id.news);
+	    syncBtn.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(PBBMainPage.this, PBBSync.class);
+				intent.putExtra("sync_instantly", true);
+				intent.putExtra("from", HelperValues.FROM_MAIN_PAGE);
 				startActivity(intent);
+				finish();
 			}
 	    	
 	    });
 	    
-	    // plant news button
-	    newsBtn = (Button)findViewById(R.id.news);
-	    newsBtn.setOnClickListener(new View.OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Toast.makeText(PBBMainPage.this, getString(R.string.Alert_comingSoon), Toast.LENGTH_SHORT).show();
-			}
-	    	
-	    });
-	    
-	    // weekly plant button
-	    weeklyBtn = (Button)findViewById(R.id.weekly);
-	    weeklyBtn.setOnClickListener(new View.OnClickListener(){
+	    // info plant button
+	    infoBtn = (Button)findViewById(R.id.info);
+	    infoBtn.setOnClickListener(new View.OnClickListener(){
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				//Toast.makeText(MainPage.this, getString(R.string.Alert_comingSoon), Toast.LENGTH_SHORT).show();
-				Intent intent = new Intent(PBBMainPage.this, WeeklyPlant.class);
+				Intent intent = new Intent(PBBMainPage.this, HelperShowAll.class);
+				intent.putExtra("from", HelperValues.FROM_MAIN_PAGE); 
 				startActivity(intent);
 
 			}
@@ -284,10 +337,10 @@ public class PBBMainPage extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu){
 		super.onCreateOptionsMenu(menu);
 		
-		menu.add(0, 1, 0, getString(R.string.Menu_help)).setIcon(android.R.drawable.ic_menu_help);
-		menu.add(0, 2, 0, getString(R.string.Menu_sync)).setIcon(R.drawable.ic_menu_refresh);
-		menu.add(0, 3, 0, getString(R.string.Menu_about)).setIcon(android.R.drawable.ic_menu_info_details);
-		//menu.add(0, 4, 0, getString(R.string.Menu_logout)).setIcon(android.R.drawable.ic_menu_close_clear_cancel);
+		// menu.add(0, 1, 0, getString(R.string.Menu_help)).setIcon(android.R.drawable.ic_menu_help);
+		// menu.add(0, 2, 0, getString(R.string.Menu_sync)).setIcon(R.drawable.ic_menu_refresh);
+		// menu.add(0, 3, 0, getString(R.string.Menu_about)).setIcon(android.R.drawable.ic_menu_info_details);
+		// menu.add(0, 4, 0, getString(R.string.Menu_logout)).setIcon(android.R.drawable.ic_menu_close_clear_cancel);
 		menu.add(0, 4, 0, getString(R.string.Menu_settings)).setIcon(android.R.drawable.ic_menu_preferences);
 			
 		return true;
