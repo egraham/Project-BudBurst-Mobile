@@ -133,7 +133,7 @@ public class OneTimeMainPage extends ListActivity {
 		 *  > 10 : User Defined Lists
 		 *  and more later.
 		 */
-		iItem.setHeaderText("Official plants from Project Budburst");
+		iItem.setHeaderText(getString(R.string.List_Official_BudBurst));
 	//	iItem.setHeaderText("none");
 		iItem.setTitle(getString(R.string.List_Project_Budburst_title));
 		iItem.setImageURL("pbb_icon_main2");

@@ -314,7 +314,7 @@
 <string name="Help_Main_PotW">Plant of the Week:  A new plant is featured every week with pictures and interesting. fun facts!</string>
 <string name="Help_MyList">My BudBurst Help</string>
 <string name="Help_MyList_para1">The My BudBurst page displays your Regular Observations, your Single Reports, and your progress for observing all plant phenophases.</string>
-<string name="Help_MyList_para2">The list is sorted alphabetically within sites and the number of observations you have made are listed with each plant.</string>
+<string name="Help_MyList_para2">The list is sorted alphabetically within sites and the number of observations you have made are listed with each plant.\n\nYou may now also:</string>
 <string name="Help_MyList_para3">Touch the Plant Thumbnail Image on the left of the list to see a larger image and a description of your plant.</string>
 <string name="Help_MyList_para4">Touch the Plant Name to make a NEW phenophase observation.</string>
 <string name="Help_MyList_para5">To Add a Plant to your List, choose the appropriate button on the top of the list, either adding a Regular Observation:</string>
@@ -379,6 +379,7 @@
 <string name="Start_Downloading_UCLA_Tree_Lists">Start Downloading user defined lists</string>
 <string name="Start_Downloading_Floracache_Lists">Start Downloading floracache lists</string>
 <string name="Downloading_User_Defined_Lists">Downloading user plant lists</string>
+<string name="List_Official_BudBurst">Project BudBurst official plant list</string>
 <string name="List_USDA_PlantLists_title">Local Species</string>
 <string name="List_USDA_PlantLists_content">County-wide species from the USDA</string>
 <string name="List_Budburst">Official BudBurst plants</string>
@@ -388,8 +389,8 @@
 <string name="List_Whats_native">Local native plants from the USDA</string>
 <string name="List_User_Plant_UCLA_trees">Tree species on campus</string>
 <string name="List_User_Plant_SAMO">Santa Monica blooming plants</string>
-<string name="List_Official_Header">Local plants from the USDA</string>
-<string name="List_User_Plant_Header">Local plants from user-created lists</string>
+<string name="List_Official_Header">USDA county-level, local plant lists</string>
+<string name="List_User_Plant_Header">Special and user-created plant lists</string>
 <string name="List_Project_Budburst_title">Project BudBurst</string>
 <string name="List_Whatsinvasive_title">Local Invasives</string>
 <string name="List_Native_title">Local Native</string>
