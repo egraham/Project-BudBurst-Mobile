@@ -133,7 +133,14 @@ public class PBBMainPage extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				//Toast.makeText(MainPage.this, getString(R.string.Alert_comingSoon), Toast.LENGTH_SHORT).show();
-				startActivity(new Intent(PBBMainPage.this, ListMain.class));
+			//	startActivity(new Intent(PBBMainPage.this, ListMain.class));
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(PBBMainPage.this, OneTimeMainPage.class);
+				pbbItem = new PBBItems();
+				pbbItem.setLocalImageName("");
+				intent.putExtra("pbbItem", pbbItem);
+				intent.putExtra("from", HelperValues.FROM_PLANT_LIST);
+				startActivity(intent);
 			}
 	    });
 	    
@@ -330,8 +337,8 @@ public class PBBMainPage extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu){
 		super.onCreateOptionsMenu(menu);
 		
-		menu.add(0, 1, 0, getString(R.string.Menu_help)).setIcon(android.R.drawable.ic_menu_help);
-		menu.add(0, 2, 0, getString(R.string.Menu_sync)).setIcon(R.drawable.ic_menu_refresh);
+//		menu.add(0, 1, 0, getString(R.string.Menu_help)).setIcon(android.R.drawable.ic_menu_help);
+//		menu.add(0, 2, 0, getString(R.string.Menu_sync)).setIcon(R.drawable.ic_menu_refresh);
 		menu.add(0, 3, 0, getString(R.string.Menu_about)).setIcon(android.R.drawable.ic_menu_info_details);
 		//menu.add(0, 4, 0, getString(R.string.Menu_logout)).setIcon(android.R.drawable.ic_menu_close_clear_cancel);
 		menu.add(0, 4, 0, getString(R.string.Menu_settings)).setIcon(android.R.drawable.ic_menu_preferences);

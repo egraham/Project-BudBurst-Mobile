@@ -29,7 +29,7 @@
     <string name="get_user_defined_group">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/phone/get_user_defined_group.php</string>
     <string name="get_floracache_species_image">http://cens.solidnetdns.com/~kshan/PBB/PBsite_CENS/upload_images/onetime.php?image_id=</string>
     <string name="get_local_usda_plant_list">http://networkednaturalist.org/python_scripts/cens-dylan/list.py</string>
-    <string name="no_site_no_species_instruction">\nNo sites or plants were found! If this is your first login, please follow the steps below.\n\n (1) Add a Regular Observation. \nClick MENU-&gt;ADD-&gt;Regular Observation \n\n (2) Make a Single Report. \nClick MENU-&gt;ADD-&gt;Single Report\n\n\n If you already have observed species, then click MENU-&gt;SYNCHRONIZE\n\n</string>
+    <string name="no_site_no_species_instruction">\nNo sites or plants were found! If this is your first login, please follow the steps below.\n\n (1) Add a Regular Observation. \nClick Add Regular Observation \n\n (2) Make a Single Report. \nClick Add Single Report\n\n\n If you already have observed species, then click MENU-&gt;SYNCHRONIZE\n\n</string>
     <string name="Floracache_Easy_Success">Great! You are close enough to capture the floracache. Proceed to make a Single Report?</string>
     <string name="instruction_old">You have no plants yet, or you need to synchronize your phone.\n\n (1) Synchronize your phone. \n\n If you just logged in\n\n (2) Start by adding a plant to an existing site (MENU &gt; Add Plant). \n\n (3) Please synchronize your phone with the database (Menu &gt; Synchronize).  If this fails, you may have connectivity problems.</string>
     <string name="instruction">\n\nYou have just logged in and now need to synchronize your phone with the Project Budburst database.\n\nPlease click the Synchronize button if you have connectivity.\n\nYou can find Synchronize button at any page by clicking the MENU button.</string>
@@ -208,8 +208,8 @@
 <string name="AddSite_description">Site Description</string>
 <string name="AddSite_optional">Site Note (optional)</string>
 <string name="Button_save">Done</string>
-<string name="Button_update_GPS">Refine Location</string>
-<string name="Button_switch_to_map">Map View</string>
+<string name="Button_update_GPS">Update Location GPS</string>
+<string name="Button_switch_to_map">Change Location Map</string>
 <string name="WI_Area">Areas with official invasive species lists</string>
 <string name="WI_parks">The seven nearest parks</string>
 <string name="BBList">Project BudBurst Plants</string>
@@ -369,19 +369,19 @@
 <string name="Button_Cancel">Cancel</string>
 <string name="Button_Photo">Photo</string>
 <string name="Button_NoPhoto">No Photo</string>
-<string name="Start_Downloading_All_Lists">Start downloading local plant lists</string>
+<string name="Start_Downloading_All_Lists">Downloading local plant lists</string>
 <string name="Down_Downloading_All_Lists">Download complete - plant lists</string>
 <string name="Success_Downloading_All_Lists">Successfully download plant lists</string>
-<string name="Start_Downloading">Start downloading local species</string>
+<string name="Start_Downloading">Downloading local species</string>
 <string name="Still_Downloading">Still Downloading the lists</string>
 <string name="Download_complete_local">Successfully download local plant lists</string>
 <string name="Title_User_Defined_List">User Defined Lists</string>
-<string name="Start_Downloading_UCLA_Tree_Lists">Start Downloading user defined lists</string>
-<string name="Start_Downloading_Floracache_Lists">Start Downloading floracache lists</string>
+<string name="Start_Downloading_UCLA_Tree_Lists">Downloading user defined lists</string>
+<string name="Start_Downloading_Floracache_Lists">Downloading floracache lists</string>
 <string name="Downloading_User_Defined_Lists">Downloading user plant lists</string>
 <string name="List_USDA_PlantLists_title">Local Species</string>
 <string name="List_USDA_PlantLists_content">County-wide species from the USDA</string>
-<string name="List_Budburst">Local BudBurst plants</string>
+<string name="List_Budburst">Official BudBurst plants</string>
 <string name="List_Whatsinvasive">Help locate local invasives</string>
 <string name="List_Whats_endangered">Local endangered species from the USDA</string>
 <string name="List_Whats_poisonous">Local poisonous plants from the USDA</string>
@@ -420,8 +420,9 @@
 <string name="Floracache_Hard_Refresh">Refresh the list</string>
 <string name="go_to_settings_page">Please download the species list first.\nTo download the lists, Go to the \'Settings\' page</string>
 <string name="cateogory_text">Category</string>
+<string name="DownLoad_Flora_Lists">Download floracaching lists</string>
 <string name="User_Defined_Lists_Group">Select User-Defined Lists</string>
-<string name="Alt_User_Defined_Group">Refresh the user defined groups...</string>
+<string name="Alt_User_Defined_Group">Refreshing the user defined groups...</string>
 <string name="Floracache_List_Download_Text">Start downloading - Floracache Lists</string>
 <string name="Floracache_List_Downloading">Downloading Floracache lists</string>
 <string name="Floracache_List_Download_Success">Successfully download Floracache lists</string>

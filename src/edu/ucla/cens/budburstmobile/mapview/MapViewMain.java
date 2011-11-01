@@ -247,6 +247,7 @@ public class MapViewMain extends MapActivity{
 		
 		showButtonOnMap();
 		checkGpsIsOn();
+		showBudburstSpeciesOnMap(false);
 	}
 	
 	private void longPressListener() {

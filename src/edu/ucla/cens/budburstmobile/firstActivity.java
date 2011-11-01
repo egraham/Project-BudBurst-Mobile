@@ -101,7 +101,9 @@ public class firstActivity extends Activity{
 		else {
 			
 			
-			if(!mLocManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) {
+			if(!mLocManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)
+					&&(mPref.getPreferenceString("Username", "").equals("")) 
+					&& mPref.getPreferenceString("Password", "").equals("")) {
 				alert_no_gps();
 		    }
 		    else {
@@ -125,17 +127,26 @@ public class firstActivity extends Activity{
                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(final DialogInterface dialog, final int id) {
                         firstActivity.this.startActivityForResult(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS), 3);
-                        Intent intent = new Intent(firstActivity.this, PBBSplash.class);
-						finish();
-						startActivity(intent);
+        				new Handler().postDelayed(new Runnable(){
+        			    	public void run() {
+        			    		//checkUpdate();
+        			    		Intent intent = new Intent(firstActivity.this, PBBSplash.class);
+        						finish();
+        						startActivity(intent);
+        			    	}
+        			    }, 2000);
                     }
                 })
                .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(final DialogInterface dialog, final int id) {
-                    	Intent intent = new Intent(firstActivity.this, PBBSplash.class);
-						finish();
-						startActivity(intent);
-                    	firstActivity.this.finish();
+        				new Handler().postDelayed(new Runnable(){
+        			    	public void run() {
+        			    		//checkUpdate();
+        			    		Intent intent = new Intent(firstActivity.this, PBBSplash.class);
+        						finish();
+        						startActivity(intent);
+        			    	}
+        			    }, 2000);
                     }
                 });
         final AlertDialog alert = builder.create();

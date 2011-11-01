@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import android.widget.ListView;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -33,6 +34,7 @@ import android.database.sqlite.SQLiteException;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
+//import edu.ucla.cens.budburstmobile.helper.HelperSharedPreference;
 
 public class ListUserDefinedCategory extends AsyncTask<ListItems, Void, Void>{
 
@@ -40,6 +42,7 @@ public class ListUserDefinedCategory extends AsyncTask<ListItems, Void, Void>{
 	private ProgressDialog mDialog;
 	private boolean[] mSelect;
 	private String[] mGroupName;
+//	private HelperSharedPreference mPref;
 	private ArrayList<ListGroupItem> mArr;
 	
 	public ListUserDefinedCategory(Context context) {
@@ -114,7 +117,7 @@ public class ListUserDefinedCategory extends AsyncTask<ListItems, Void, Void>{
 					
 					try {
 						otDB = otDBH.getWritableDatabase();
-
+						
 						otDB.execSQL("INSERT INTO userDefinedGroup VALUES(" +
 								jsonAry.getJSONObject(i).getString("Category_ID")  + ",\"" +
 								jsonAry.getJSONObject(i).getString("Category_Name")  + "\"," +
@@ -218,12 +221,24 @@ public class ListUserDefinedCategory extends AsyncTask<ListItems, Void, Void>{
 		
 		new AlertDialog.Builder(mContext)
 		.setTitle(mContext.getString(R.string.User_Defined_Lists_Group))
-		.setSingleChoiceItems(mGroupName, -1, new DialogInterface.OnClickListener() {
+		.setMultiChoiceItems(mGroupName, mSelect, new DialogInterface.OnMultiChoiceClickListener() {
+//		.setSingleChoiceItems(mGroupName, -1, new DialogInterface.OnClickListener() {
 			
 			@Override
-			public void onClick(DialogInterface dialog, int which) {
+			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
 				// TODO Auto-generated method stub
-				mSelect[which] = true;
+				
+	/*			AlertDialog d = (AlertDialog) dialog;
+                ListView v = d.getListView();
+                v.getItemAtPosition(which);
+                v.setChoiceMode(v.CHOICE_MODE_MULTIPLE);
+			*/	
+				if(isChecked){
+					mSelect[which]=true;
+				}
+				else{
+					mSelect[which] = false;
+				}
 			}
 		})
 		.setPositiveButton("Done", new DialogInterface.OnClickListener() {

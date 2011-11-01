@@ -17,7 +17,7 @@ import android.os.AsyncTask;
  * @author kyunghan
  *
  */
-public class HelperRefreshPlantLists extends AsyncTask<Void, Void, Void>{
+public class HelperRefreshPlantLists extends AsyncTask<ListItems, Void, Void>{
 
 	private Context mContext;
 	private int mCategory;
@@ -43,7 +43,7 @@ public class HelperRefreshPlantLists extends AsyncTask<Void, Void, Void>{
 	}
 	
 	@Override
-	protected Void doInBackground(Void... Void) {
+	protected Void doInBackground(ListItems... item2) {
 		// TODO Auto-generated method stub
 		
 		HelperSharedPreference hPref = new HelperSharedPreference(mContext);
@@ -52,16 +52,16 @@ public class HelperRefreshPlantLists extends AsyncTask<Void, Void, Void>{
 				Double.parseDouble(hPref.getPreferenceString("longitude", "0.0")));
 		
 		ListLocalDownload listDownloadBudburst = new ListLocalDownload(mContext, HelperValues.LOCAL_BUDBURST_LIST);
-		listDownloadBudburst.execute(item);
+		listDownloadBudburst.execute(item2);
 		
 		ListLocalDownload listDownloadInvasive = new ListLocalDownload(mContext, HelperValues.LOCAL_WHATSINVASIVE_LIST);
-		listDownloadInvasive.execute(item);
+		listDownloadInvasive.execute(item2);
 		
 		ListLocalDownload listDownloadPoisonous = new ListLocalDownload(mContext, HelperValues.LOCAL_POISONOUS_LIST);
-		listDownloadPoisonous.execute(item);
+		listDownloadPoisonous.execute(item2);
 		
 		ListLocalDownload listDownloadEndangered = new ListLocalDownload(mContext, HelperValues.LOCAL_THREATENED_ENDANGERED_LIST);
-		listDownloadEndangered.execute(item);
+		listDownloadEndangered.execute(item2);
 		
 		
 		return null;

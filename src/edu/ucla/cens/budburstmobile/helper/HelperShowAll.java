@@ -133,17 +133,17 @@ public class HelperShowAll extends Activity implements OnClickListener{
 					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
 						// move to main page
-					//	Intent intent = new Intent(HelperShowAll.this, PBBMainPage.class);
-					//	intent.putExtra("from", HelperValues.FROM_MAIN_PAGE); 
-					//	startActivity(intent);
+						Intent intent = new Intent(HelperShowAll.this, PBBMainPage.class);
+						intent.putExtra("from", HelperValues.FROM_MAIN_PAGE); 
+						startActivity(intent);
 						finish();
 					}
 				})
 				.show();
 			} else {
-				Intent intent = new Intent(HelperShowAll.this, PBBMainPage.class);
-				intent.putExtra("from", HelperValues.FROM_MAIN_PAGE); 
-				startActivity(intent);
+		//		Intent intent = new Intent(HelperShowAll.this, PBBMainPage.class);
+		//		intent.putExtra("from", HelperValues.FROM_MAIN_PAGE); 
+		//		startActivity(intent);
 				finish();
 			}
 
