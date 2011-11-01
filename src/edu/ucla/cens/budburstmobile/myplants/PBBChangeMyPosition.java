@@ -226,8 +226,10 @@ public class PBBChangeMyPosition extends MapActivity {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub
-					mPref.setPreferencesString("latitude", Double.toString(mLatitude));
-	   				mPref.setPreferencesString("longitude", Double.toString(mLongitude));
+					mPref.setPreferencesString("latitude", Double.toString(sOverlay.getLatitude()));
+	   				mPref.setPreferencesString("longitude", Double.toString(sOverlay.getLongitude()));
+	   				mPref.setPreferencesString("latitude2", Double.toString(sOverlay.getLatitude()));
+	   				mPref.setPreferencesString("longitude2", Double.toString(sOverlay.getLongitude()));
 	   				mPref.setPreferencesString("accuracy", Float.toHexString(mAccuracy));
 	   				
 	   				finish();
