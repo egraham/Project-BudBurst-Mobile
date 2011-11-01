@@ -34,7 +34,6 @@ import android.database.sqlite.SQLiteException;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
-//import edu.ucla.cens.budburstmobile.helper.HelperSharedPreference;
 
 public class ListUserDefinedCategory extends AsyncTask<ListItems, Void, Void>{
 
@@ -42,7 +41,6 @@ public class ListUserDefinedCategory extends AsyncTask<ListItems, Void, Void>{
 	private ProgressDialog mDialog;
 	private boolean[] mSelect;
 	private String[] mGroupName;
-//	private HelperSharedPreference mPref;
 	private ArrayList<ListGroupItem> mArr;
 	
 	public ListUserDefinedCategory(Context context) {
@@ -117,7 +115,7 @@ public class ListUserDefinedCategory extends AsyncTask<ListItems, Void, Void>{
 					
 					try {
 						otDB = otDBH.getWritableDatabase();
-						
+
 						otDB.execSQL("INSERT INTO userDefinedGroup VALUES(" +
 								jsonAry.getJSONObject(i).getString("Category_ID")  + ",\"" +
 								jsonAry.getJSONObject(i).getString("Category_Name")  + "\"," +
@@ -227,12 +225,6 @@ public class ListUserDefinedCategory extends AsyncTask<ListItems, Void, Void>{
 			@Override
 			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
 				// TODO Auto-generated method stub
-				
-	/*			AlertDialog d = (AlertDialog) dialog;
-                ListView v = d.getListView();
-                v.getItemAtPosition(which);
-                v.setChoiceMode(v.CHOICE_MODE_MULTIPLE);
-			*/	
 				if(isChecked){
 					mSelect[which]=true;
 				}
