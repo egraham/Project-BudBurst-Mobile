@@ -122,19 +122,19 @@ public class firstActivity extends Activity{
 	}
 	private void alert_no_gps() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Yout GPS seems to be disabled.  You need GPS to run some parts of this application. Do you want to enable it now?")
+        builder.setMessage("You need GPS to run some parts of this application. Do you want to enable it? (You don't have to do this now)")
                .setCancelable(false)
                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(final DialogInterface dialog, final int id) {
                         firstActivity.this.startActivityForResult(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS), 3);
-        				new Handler().postDelayed(new Runnable(){
+        				/* new Handler().postDelayed(new Runnable(){
         			    	public void run() {
         			    		//checkUpdate();
         			    		Intent intent = new Intent(firstActivity.this, PBBSplash.class);
         						finish();
         						startActivity(intent);
         			    	}
-        			    }, 2000);
+        			    }, 2000); */
                     }
                 })
                .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -146,7 +146,7 @@ public class firstActivity extends Activity{
         						finish();
         						startActivity(intent);
         			    	}
-        			    }, 2000);
+        			    }, 0);
                     }
                 });
         final AlertDialog alert = builder.create();
