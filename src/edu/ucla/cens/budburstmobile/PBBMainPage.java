@@ -133,7 +133,14 @@ public class PBBMainPage extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				//Toast.makeText(MainPage.this, getString(R.string.Alert_comingSoon), Toast.LENGTH_SHORT).show();
-				startActivity(new Intent(PBBMainPage.this, ListMain.class));
+			//	startActivity(new Intent(PBBMainPage.this, ListMain.class));
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(PBBMainPage.this, OneTimeMainPage.class);
+				pbbItem = new PBBItems();
+				pbbItem.setLocalImageName("");
+				intent.putExtra("pbbItem", pbbItem);
+				intent.putExtra("from", HelperValues.FROM_PLANT_LIST);
+				startActivity(intent);
 			}
 	    });
 	    

@@ -1,6 +1,7 @@
 package edu.ucla.cens.budburstmobile.onetime;
 
 import java.io.File;
+import edu.ucla.cens.budburstmobile.adapter.MyListAdapterMainPage;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -35,17 +36,25 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import edu.ucla.cens.budburstmobile.PBBHelpPage;
+import edu.ucla.cens.budburstmobile.PBBSync;
 import edu.ucla.cens.budburstmobile.R;
 import edu.ucla.cens.budburstmobile.adapter.MyListAdapter;
+import edu.ucla.cens.budburstmobile.adapter.MyListAdapterMainPage;
 import edu.ucla.cens.budburstmobile.database.OneTimeDBHelper;
 import edu.ucla.cens.budburstmobile.database.StaticDBHelper;
 import edu.ucla.cens.budburstmobile.database.SyncDBHelper;
+import edu.ucla.cens.budburstmobile.helper.HelperListItem;
 import edu.ucla.cens.budburstmobile.helper.HelperPlantItem;
 import edu.ucla.cens.budburstmobile.helper.HelperValues;
+import edu.ucla.cens.budburstmobile.lists.ListDetail;
+import edu.ucla.cens.budburstmobile.lists.ListGroupItem;
 import edu.ucla.cens.budburstmobile.myplants.PBBAddNotes;
 import edu.ucla.cens.budburstmobile.myplants.PBBAddPlant;
 import edu.ucla.cens.budburstmobile.myplants.PBBAddSite;
+import edu.ucla.cens.budburstmobile.myplants.PBBPlantList;
 import edu.ucla.cens.budburstmobile.utils.PBBItems;
+import edu.ucla.cens.budburstmobile.utils.QuickCapture;
 
 public class OneTimePBBLists extends ListActivity{
 	private ArrayList<HelperPlantItem> arPlantList;
@@ -55,12 +64,23 @@ public class OneTimePBBLists extends ListActivity{
 	private MyListAdapter mylistapdater = null;
 	private ListView MyList = null;
 	
+	private ArrayList<ListGroupItem> mArr = new ArrayList<ListGroupItem>();
+	private MyListAdapterMainPage mylistapdater2;
+	private boolean isUserDefinedListOn = true;
+	
 	private Button topBtn1 = null;
 	private Button topBtn2 = null;
 	private Button topBtn3 = null;
 	private Button topBtn4 = null;
 	private EditText et1 = null;
 	private Dialog dialog = null;
+	
+	
+	//MENU contents
+	final private int MENU_ADD_PLANT = 1;
+	final private int MENU_ADD_QC_PLANT = 2;
+	final private int MENU_SYNC = 6;
+	final private int MENU_HELP = 7;
 	
 	//private TextView header = null;
 	private TextView myTitleText = null;
@@ -70,6 +90,7 @@ public class OneTimePBBLists extends ListActivity{
 	private int mPreviousActivity;
 	private int mProtocolID = 0;
 	
+
 	
 	private String mCommonName = "Unknown/Other";
 	
@@ -324,6 +345,14 @@ public class OneTimePBBLists extends ListActivity{
 				OneTimeDBHelper otDBH = new OneTimeDBHelper(OneTimePBBLists.this);
 				SQLiteDatabase otDB = otDBH.getReadableDatabase();
 				Cursor cursor = staticDB.rawQuery("SELECT _id, species_name, common_name FROM species ORDER BY common_name;", null);
+				if(cursor.equals(null)|| cursor.getCount()==0){
+					Toast.makeText(OneTimePBBLists.this, "Please Download Lists", Toast.LENGTH_SHORT).show();
+				}
+				//Toast.makeText(OneTimePBBLists.this, "Cursor Count: "+cursor.getCount(), Toast.LENGTH_SHORT).show();
+				HelperListItem iItem = new HelperListItem();
+				ArrayList<HelperListItem> listArr = new ArrayList<HelperListItem>();
+				mArr = otDBH.getListGroupItem(OneTimePBBLists.this);
+
 				
 				while(cursor.moveToNext()) {
 					String sName = cursor.getString(1);
@@ -348,19 +377,125 @@ public class OneTimePBBLists extends ListActivity{
 					cursor2.close();
 				}
 				
+
+				
+				
 				otDBH.close();
 				otDB.close();
-								
+				if(arPlantList.equals(null) || arPlantList.isEmpty()) {
+					iItem = new HelperListItem();
+					iItem.setHeaderText(getString(R.string.List_User_Plant_Header));
+					iItem.setTitle("No list yet");
+					iItem.setImageURL("yellow_triangle_exclamation50");
+					iItem.setDescription("Please download the user defined lists. Menu->Settings->Download User Defined List");
+					listArr.add(iItem);
+					mylistapdater2 = new MyListAdapterMainPage(OneTimePBBLists.this, R.layout.onetime_list ,listArr);
+					ListView MyList = getListView();
+					MyList.setAdapter(mylistapdater2);
+				}
+				else{
 				mylistapdater = new MyListAdapter(OneTimePBBLists.this, R.layout.plantlist_item2, arPlantList);
+				
 				MyList = getListView(); 
 				MyList.setAdapter(mylistapdater);
+				}
 				cursor.close();
+			
 			}
 			
 			staticDBHelper.close();
 		}
 	};
 	
+	
+	/**
+	 * Menu option(non-Javadoc)
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
+	public boolean onCreateOptionsMenu(Menu menu){
+		super.onCreateOptionsMenu(menu);
+	//	menu.add(0, MENU_ADD_PLANT, 0, getString(R.string.Menu_addPlant)).setIcon(android.R.drawable.ic_menu_add);
+	//	menu.add(0, MENU_ADD_QC_PLANT, 0, getString(R.string.Menu_addQCPlant)).setIcon(android.R.drawable.ic_menu_add);
+		menu.add(0, MENU_SYNC, 0, getString(R.string.Menu_sync)).setIcon(R.drawable.ic_menu_refresh);
+		menu.add(0, MENU_HELP, 0, getString(R.string.Menu_help)).setIcon(android.R.drawable.ic_menu_help);
+			
+		return true;
+	}
+	
+	/**
+	 * Menu option selection handling(non-Javadoc)
+	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
+	 */
+	public boolean onOptionsItemSelected(MenuItem item){
+		Intent intent;
+		switch(item.getItemId()){
+			case MENU_ADD_PLANT:
+				intent = new Intent(OneTimePBBLists.this, OneTimeMainPage.class);
+				pbbItem = new PBBItems();
+				intent.putExtra("pbbItem", pbbItem);
+				intent.putExtra("from", HelperValues.FROM_PLANT_LIST);
+				startActivity(intent);
+				return true;
+			case MENU_ADD_QC_PLANT:
+				/*
+				 * Ask users if they are ready to take a photo.
+				 */
+				new AlertDialog.Builder(OneTimePBBLists.this)
+				.setTitle(getString(R.string.Menu_addQCPlant))
+				.setMessage(getString(R.string.Start_Shared_Plant))
+				.setPositiveButton(getString(R.string.Button_Photo), new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						/*
+						 * Move to QuickCapture
+						 */
+						Intent intent = new Intent(OneTimePBBLists.this, QuickCapture.class);
+						pbbItem = new PBBItems();
+						intent.putExtra("pbbItem", pbbItem);
+						intent.putExtra("from", HelperValues.FROM_QUICK_CAPTURE);
+						startActivity(intent);
+					}
+				})
+				.setNeutralButton(getString(R.string.Button_NoPhoto), new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						Intent intent = new Intent(OneTimePBBLists.this, OneTimeMainPage.class);
+						pbbItem = new PBBItems();
+						pbbItem.setLocalImageName("");
+						intent.putExtra("pbbItem", pbbItem);
+						intent.putExtra("from", HelperValues.FROM_QUICK_CAPTURE);
+						startActivity(intent);
+					}
+				})
+				.setNegativeButton(getString(R.string.Button_Cancel), new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+					}
+				})
+				.show();
+
+				return true;
+			case MENU_SYNC:
+				intent = new Intent(OneTimePBBLists.this, PBBSync.class);
+				intent.putExtra("sync_instantly", true);
+				intent.putExtra("from", HelperValues.FROM_PLANT_LIST);
+				startActivity(intent);
+				finish();
+				return true;
+			case MENU_HELP:
+				intent = new Intent(OneTimePBBLists.this, PBBHelpPage.class);
+				intent.putExtra("from", HelperValues.FROM_PLANT_LIST);
+				startActivity(intent);
+				return true;
+		}
+		return false;
+	}
 	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id){
@@ -370,6 +505,8 @@ public class OneTimePBBLists extends ListActivity{
 		/*
 		 * If user chooses Unknown/Plant, show the popup dialog adding common name.
 		 */
+		
+		
 		if(arPlantList.get(position).getSpeciesID() == HelperValues.UNKNOWN_SPECIES) {
 			dialog = new Dialog(OneTimePBBLists.this);
 			
@@ -390,7 +527,7 @@ public class OneTimePBBLists extends ListActivity{
 						mCommonName = "Unknown/Other";
 					}
 					
-					if(mPreviousActivity == HelperValues.FROM_QUICK_CAPTURE) {
+					if(mPreviousActivity == HelperValues.FROM_QUICK_CAPTURE || mPreviousActivity == HelperValues.FROM_PLANT_LIST) {
 						
 						new AlertDialog.Builder(OneTimePBBLists.this)
 						.setTitle("Select Category")
@@ -447,12 +584,14 @@ public class OneTimePBBLists extends ListActivity{
 				}
 			});
 		}
+		
+		
 		/*
 		 * If user chooses one of the official species..
 		 */
 		else {
 			
-			if(mPreviousActivity == HelperValues.FROM_QUICK_CAPTURE) {
+			if(mPreviousActivity == HelperValues.FROM_QUICK_CAPTURE || mPreviousActivity == HelperValues.FROM_PLANT_LIST) {
 				
 				int getSpeciesID = arPlantList.get(position).getSpeciesID();
 				int getProtocolID = 2;
@@ -496,20 +635,36 @@ public class OneTimePBBLists extends ListActivity{
 				
 				cursor.close();
 				staticDB.close();
-				
-				Intent intent = new Intent(OneTimePBBLists.this, OneTimePhenophase.class);
-				
-				pbbItem.setCommonName(arPlantList.get(mCurrentPosition).getCommonName());
-				pbbItem.setScienceName(arPlantList.get(mCurrentPosition).getSpeciesName());
-				pbbItem.setProtocolID(mProtocolID);
-				pbbItem.setPhenophaseID(mPhenoID);
-				pbbItem.setSpeciesID(arPlantList.get(mCurrentPosition).getSpeciesID());
-				pbbItem.setCategory(HelperValues.LOCAL_BUDBURST_LIST);
-				
-				intent.putExtra("pbbItem", pbbItem);
-				intent.putExtra("from", HelperValues.FROM_QUICK_CAPTURE);
-				startActivity(intent);
-				
+				if(mPreviousActivity == HelperValues.FROM_PLANT_LIST) {
+					Intent intent = new Intent(OneTimePBBLists.this, ListDetail.class);
+					
+					pbbItem.setCommonName(arPlantList.get(mCurrentPosition).getCommonName());
+					pbbItem.setScienceName(arPlantList.get(mCurrentPosition).getSpeciesName());
+					pbbItem.setProtocolID(mProtocolID);
+					pbbItem.setPhenophaseID(mPhenoID);
+					pbbItem.setSpeciesID(arPlantList.get(mCurrentPosition).getSpeciesID());
+					pbbItem.setCategory(HelperValues.LOCAL_BUDBURST_LIST);
+					Log.d("---------TEST--------", "Plant list, ");
+					Log.d("---------TEST--------", "Plant list, "+mPhenoID+" "+arPlantList.get(mCurrentPosition).getCommonName());
+					intent.putExtra("pbbItem", pbbItem);
+					intent.putExtra("from", HelperValues.FROM_LOCAL_PLANT_LISTS);
+					
+					startActivity(intent);
+				}
+				else{
+					Intent intent = new Intent(OneTimePBBLists.this, OneTimePhenophase.class);
+					
+					pbbItem.setCommonName(arPlantList.get(mCurrentPosition).getCommonName());
+					pbbItem.setScienceName(arPlantList.get(mCurrentPosition).getSpeciesName());
+					pbbItem.setProtocolID(mProtocolID);
+					pbbItem.setPhenophaseID(mPhenoID);
+					pbbItem.setSpeciesID(arPlantList.get(mCurrentPosition).getSpeciesID());
+					pbbItem.setCategory(HelperValues.LOCAL_BUDBURST_LIST);
+					
+					intent.putExtra("pbbItem", pbbItem);
+					intent.putExtra("from", HelperValues.FROM_QUICK_CAPTURE);
+					startActivity(intent);
+				}
 			}
 			else {
 				Intent intent = new Intent(OneTimePBBLists.this, PBBAddNotes.class);
@@ -526,6 +681,7 @@ public class OneTimePBBLists extends ListActivity{
 				startActivity(intent);
 			}
 		}
-	}
+		}
+	
 }
 

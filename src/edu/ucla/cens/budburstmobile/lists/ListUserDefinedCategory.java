@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import android.widget.ListView;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -218,12 +219,18 @@ public class ListUserDefinedCategory extends AsyncTask<ListItems, Void, Void>{
 		
 		new AlertDialog.Builder(mContext)
 		.setTitle(mContext.getString(R.string.User_Defined_Lists_Group))
-		.setSingleChoiceItems(mGroupName, -1, new DialogInterface.OnClickListener() {
+		.setMultiChoiceItems(mGroupName, mSelect, new DialogInterface.OnMultiChoiceClickListener() {
+//		.setSingleChoiceItems(mGroupName, -1, new DialogInterface.OnClickListener() {
 			
 			@Override
-			public void onClick(DialogInterface dialog, int which) {
+			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
 				// TODO Auto-generated method stub
-				mSelect[which] = true;
+				if(isChecked){
+					mSelect[which]=true;
+				}
+				else{
+					mSelect[which] = false;
+				}
 			}
 		})
 		.setPositiveButton("Done", new DialogInterface.OnClickListener() {
