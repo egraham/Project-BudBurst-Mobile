@@ -141,9 +141,9 @@ public class HelperShowAll extends Activity implements OnClickListener{
 				})
 				.show();
 			} else {
-				Intent intent = new Intent(HelperShowAll.this, PBBMainPage.class);
-				intent.putExtra("from", HelperValues.FROM_MAIN_PAGE); 
-				startActivity(intent);
+		//		Intent intent = new Intent(HelperShowAll.this, PBBMainPage.class);
+		//		intent.putExtra("from", HelperValues.FROM_MAIN_PAGE); 
+		//		startActivity(intent);
 				finish();
 			}
 
