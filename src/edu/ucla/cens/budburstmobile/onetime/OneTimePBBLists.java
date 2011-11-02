@@ -109,7 +109,7 @@ public class OneTimePBBLists extends ListActivity{
 		v.setPadding(0, 0, 0, 0);
 
 		myTitleText = (TextView) findViewById(R.id.my_title);
-		myTitleText.setText(" One Time Observation > Top 10");
+		myTitleText.setText(getString(R.string.AddPlant_top10));
 		
 		Bundle bundle = getIntent().getExtras();
 		pbbItem = bundle.getParcelable("pbbItem");
@@ -181,7 +181,7 @@ public class OneTimePBBLists extends ListActivity{
 			
 			if(v == topBtn1) {
 				//header.setText("'TOP 10' list of the plants.");
-				myTitleText.setText(" One Time Observation > Top 10");
+				myTitleText.setText(getString(R.string.AddPlant_top10));
 				arPlantList = new ArrayList<HelperPlantItem>();
 		 		Cursor cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species ORDER BY common_name;", null);
 				while(cursor.moveToNext()){
@@ -221,7 +221,7 @@ public class OneTimePBBLists extends ListActivity{
 			}
 			else if (v == topBtn2) {
 				//header.setText("'ALL' list of the plants.");
-				myTitleText.setText(" One Time Observation > All");
+				myTitleText.setText(getString(R.string.AddPlant_all));
 				//Rereive syncDB and add them to arUserPlatList arraylist
 				arPlantList = new ArrayList<HelperPlantItem>();
 		 		Cursor cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species ORDER BY common_name;", null);
@@ -274,23 +274,23 @@ public class OneTimePBBLists extends ListActivity{
 
 						if(category[which].equals("Wild Flowers and Herbs")) {
 							cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.WILD_FLOWERS + " ORDER BY common_name;",null);
-							myTitleText.setText(" One Time Observation > Flowers");
+							myTitleText.setText(getString(R.string.AddPlant_addFlowers));
 						}
 						else if(category[which].equals("Grass")) {
 							cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.GRASSES + " ORDER BY common_name;",null);
-							myTitleText.setText(" One Time Observation > Grass");
+							myTitleText.setText(getString(R.string.AddPlant_addGrass));
 						}
 						else if(category[which].equals("Deciduous Trees and Shrubs")) {
 							cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.DECIDUOUS_TREES + " OR protocol_id=" + HelperValues.DECIDUOUS_TREES_WIND + " ORDER BY common_name;",null);
-							myTitleText.setText(" One Time Observation > Deciduous");
+							myTitleText.setText(getString(R.string.AddPlant_addDecid));
 						}
 						else if(category[which].equals("Evergreen Trees and Shrubs")) {
 							cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.EVERGREEN_TREES + " OR protocol_id=" + HelperValues.EVERGREEN_TREES_WIND + " ORDER BY common_name;",null);
-							myTitleText.setText(" One Time Observation > Evergreen");
+							myTitleText.setText(getString(R.string.AddPlant_addEvergreen));
 						}
 						else if(category[which].equals("Conifer")) {
 							cursor = staticDB.rawQuery("SELECT _id, species_name, common_name, protocol_id FROM species WHERE protocol_id=" + HelperValues.CONIFERS + " ORDER BY common_name;",null);
-							myTitleText.setText(" One Time Observation > Conifer");
+							myTitleText.setText(getString(R.string.AddPlant_addConifer));
 						}
 						else {
 						}
@@ -693,4 +693,3 @@ public class OneTimePBBLists extends ListActivity{
 		}
 	}
 }
-
