@@ -98,7 +98,7 @@ public class FloraCacheMain extends ListActivity {
 			mItem = new HelperListItem();
 			mItem.setHeaderText("none");
 			mItem.setTitle(groupName);
-			mItem.setImageURL("pbb_icon_main");
+			mItem.setImageURL("floracaching_default");
 			mItem.setDescription(groupDist);
 			mItem.setGroupID(getFloraGroup.getInt(0));
 			
