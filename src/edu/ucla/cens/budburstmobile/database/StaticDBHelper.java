@@ -215,7 +215,7 @@ public class StaticDBHelper extends SQLiteOpenHelper{
 		db.execSQL("INSERT INTO species VALUES(42, \"Robinia pseudoacacia\", \"Black locust\", 4, 2, \"" + description_species[40] + "\");");
 		db.execSQL("INSERT INTO species VALUES(43, \"Sambucus nigra\", \"Black elderberry\", 4, 2, \"" + description_species[41] + "\");");
 		db.execSQL("INSERT INTO species VALUES(44, \"Acer negundo\", \"Boxelder\", 5, 2, \"" + description_species[42] + "\");");
-		db.execSQL("INSERT INTO species VALUES(45, \"Prunus virginiana\", \"Chockcherry\", 4, 0, \"" + description_species[43] + "\");");
+		db.execSQL("INSERT INTO species VALUES(45, \"Prunus virginiana\", \"Chokecherry\", 4, 0, \"" + description_species[43] + "\");");
 		db.execSQL("INSERT INTO species VALUES(46, \"Symphoricarpos albus\", \"Common snowberry\", 4, 2, \"" + description_species[44] + "\");");
 		db.execSQL("INSERT INTO species VALUES(47, \"Mahonia repens\", \"Oregon grape\", 6, 3, \"" + description_species[45] + "\");");
 		db.execSQL("INSERT INTO species VALUES(48, \"Cercocarpus ledifolius\", \"Curl-leaf mountain mahogany\", 6, 3, \"" + description_species[46] + "\");");
