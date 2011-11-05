@@ -98,7 +98,7 @@ public class FloraCacheMain extends ListActivity {
 			mItem = new HelperListItem();
 			mItem.setHeaderText("none");
 			mItem.setTitle(groupName);
-			mItem.setImageURL("pbb_icon_main");
+			mItem.setImageURL("floracaching_default");
 			mItem.setDescription(groupDist);
 			mItem.setGroupID(getFloraGroup.getInt(0));
 			
@@ -134,13 +134,13 @@ public class FloraCacheMain extends ListActivity {
 				String[] category = getResources().getStringArray(R.array.floracache_level);
 				
 				// easy
-				if(category[which].equals("Map")) {
+				if(category[which].equals("Map (Easy)")) {
 					Intent intent = new Intent(FloraCacheMain.this, FloraCacheEasyLevel.class);
 					intent.putExtra("group_id", mListArr.get(selectedPosition).getGroupID());
 					startActivity(intent);
 				}
 				// medium
-				else if(category[which].equals("Direction")) {
+				else if(category[which].equals("Direction (Medium)")) {
 					Intent intent = new Intent(FloraCacheMain.this, FloraCacheMedLevel.class);
 					intent.putExtra("group_id", mListArr.get(selectedPosition).getGroupID());
 					startActivity(intent);
