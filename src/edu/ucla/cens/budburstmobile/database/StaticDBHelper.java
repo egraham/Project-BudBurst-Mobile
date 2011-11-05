@@ -126,7 +126,7 @@ public class StaticDBHelper extends SQLiteOpenHelper{
 		};
 	
 	public StaticDBHelper(Context context) {
-		super(context, "staticBudburst.db", null, 2);
+		super(context, "staticBudburst.db", null, 3);
 		mContext = context;
 		// TODO Auto-generated constructor stub
 	}
