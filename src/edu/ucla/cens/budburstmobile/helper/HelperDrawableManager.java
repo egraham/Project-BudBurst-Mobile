@@ -51,7 +51,7 @@ public class HelperDrawableManager {
 				mSpinner.setVisibility(View.GONE);
 				break;
 			case IN_COMPLETE:
-				mImageView.setImageResource(R.drawable.no_userdefined_image);
+				mImageView.setImageResource(R.drawable.no_photo);
 				mImageView.setVisibility(View.VISIBLE);
 				mSpinner.setVisibility(View.GONE);
 				break;
