@@ -310,7 +310,7 @@
 <string name="Help_Main_My_BudBurst_List">My BudBurst:  A record of all your observe plants.  From this page, you can review your Regular Observations and Single Reports, add new plants, and make new observations.</string>
 <string name="Help_Main_Warning">A warning sign will appear when you have plant observations waiting to be sent to the Project BudBurst database (your phone needs to synchronize).</string>
 <string name="Help_Main_QC">Quick Share:  Share one-time, Single Report captures of any plant anywhere and sent it to BudBurst!</string>
-<string name="Help_Main_Local_Lists">Local Plants:  Browse lists of plants that are identified as being in your area and make observations.</string>
+<string name="Help_Main_Local_Lists">Plant Lists:  Browse the list of BudBurst plants, local plants, and special plant lists that are identified as being in your area and make observations.</string>
 <string name="Help_Main_Local_Maps">Local Maps:  Browse a map of all BudBurst (and other) plant observations made by citizen scientists.  Make repeat observations on community plants!</string>
 <string name="Help_Main_News">News:  A list of current news items about plant phenology research, climate, and the environment.</string>
 <string name="Help_Main_PotW">Plant of the Week:  A new plant is featured every week with pictures and interesting. fun facts!</string>
@@ -326,7 +326,7 @@
 <string name="Help_MyList_para8">To Upload Your Observations and Reports, choose Sync on the main page or the MENU button on the phone then:</string>
 <string name="Help_MyList_Sync">Synchronize</string>
 <string name="Help_MyList_para9">This will start sending your observations to the database and also retrieve any observations that you have made on the website and synchronize your phone.</string>
-<string name="Help_MyList_warning">This symbol will appear when you have plant observations waiting to be sent to the database (your phone needs to synchronized with the server).</string>
+<string name="Help_MyList_warning">This symbol will appear when you have plant observations waiting to be sent to the database (your phone needs to synchronized with the server).\n\n</string>
 <string name="Help_MyList_1">(1)</string>
 <string name="Help_MyList_2">(2)</string>
 <string name="Help_PlantLists">Plant Lists Help</string>
@@ -338,15 +338,15 @@
 <string name="Help_PlantLists_PBB_para3">\"Groups\", to show only grasses (for example) within all the BudBurst plants.\n</string>
 <string name="Help_PlantLists_PBB_para4">\"All\", to see the entire BudBurst list of recommended plants to observe.\n</string>
 <string name="Help_PlantLists_PBB_para5">\"Local\", to see the subset of recommended plants in your area.\n</string>
-<string name="Help_PlantLists_para3">The Local Lists are created based on your location and need to be downloaded manually. Go to the Settings on the Main Menu and select Download Local Lists.</string>
-<string name="Help_PlantLists_WI">The Local Lists</string>
-<string name="Help_PlantLists_WI_para1">These Local Lists are for local invasive, native, and endangered species in your area.  The list is created with the help of the USDA PLANTS database and is based on your current location.</string>
+<string name="Help_PlantLists_para3">Note: the Local list is created based on your location and needs to be downloaded manually. Go to the Settings on the Main Menu and select \"Download USDA Local Plants\".</string>
+<string name="Help_PlantLists_WI">The USDA Local Lists</string>
+<string name="Help_PlantLists_WI_para1">These plant lists are for local invasive, native, and endangered species in your county.  The list is created with the help of the USDA PLANTS database and is based on your current location. Go to the Settings on the Main Menu and select \"Download USDA Local Plants\".</string>
 <string name="Help_PlantLists_WI_URL"></string>
 <string name="Help_PlantsLists_WB">The Local Blooming List</string>
 <string name="Help_PlantsLists_WB_para1">This list is for plants that are blooming in your area.  The list is created with the help of the National Park Service and the U.S. Department of Agriculture PLANTS database.</string>
 <string name="Help_PlantLists_LNL">The Local Native List</string>
 <string name="Help_PlantLists_LNL_para1">This list is for native plants in your area. The list is also created with the help of the NPS and the USDA PLANTS database.\n</string>
-<string name="Help_PlantLists_User">Lists that occur below these official lists are locally-created plant lists by researchers, teachers, and regular people who want to target specific plants for community data collection.  Check them out!\n\n</string>
+<string name="Help_PlantLists_User">The Special Lists that occur last are locally-created plant lists by researchers, teachers, and regular people who want to target specific plants for community data collection.  Go to the Settings on the Main Menu and select \"Download Special Lists\".\n\n</string>
 <string name="Preview_Mode">Preview Mode</string>
 <string name="Preview_Mode_Description">In the preview mode, you can see the plant list and make observations, but are not able to upload them to the server.</string>
 <string name="Preview_Mode_Done">Done</string>
@@ -412,8 +412,8 @@
 <string name="No_Info_Species_Detail">This species has no other information or has not been downloaded yet. Please download the local/user plant lists to see the thumbnail.</string>
 <string name="Update_Database_Table">Please turn on GPS to use this system. Press Redirect button to move to the settings page.</string>
 <string name="Pref_Category1">Download Species Lists</string>
-<string name="Pref_Category2">Download Local Plant Lists</string>
-<string name="Pref_Category3">Download User Defined Lists</string>
+<string name="Pref_Category2">Download USDA Local Plants</string>
+<string name="Pref_Category3">Download Special Lists</string>
 <string name="Pref_Category4">Download Floracache Lists</string>
 <string name="Pref_Category5">User Account</string>
 <string name="Pref_Category6">Logout</string>
@@ -454,5 +454,5 @@
 <string name="Low_GPS_Signal">Low GPS signal, make sure you are in the good connectivity area</string>
 <item type="id" name="app_notification_id"/>
 <string name="Help_Main_Single_Report">Single Report.  Simply tell us the one-time status of a plant you want to report on!</string>
-<string name="Help_Main_Sync">Synchronize.  This function allows you to choose when you want to upload your new observations and download ones you have already made.  Good connectivity is required!</string>
+<string name="Help_Main_Sync">Synchronize.  This function allows you to choose when you want to upload your new observations and download ones you have already made.  Good connectivity is required!\n\n</string>
 </resources>
