@@ -23,7 +23,6 @@ import edu.ucla.cens.budburstmobile.myplants.PBBPlantList;
 import edu.ucla.cens.budburstmobile.onetime.OneTimeMainPage;
 import edu.ucla.cens.budburstmobile.utils.PBBItems;
 import edu.ucla.cens.budburstmobile.utils.QuickCapture;
-import edu.ucla.cens.budburstmobile.weeklyplant.WeeklyPlant;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
