@@ -353,7 +353,7 @@
 <string name="Done_Quick_Capture">Done Quick Capture</string>
 <string name="AddSite_Finish_GPS">Finish GPS</string>
 <string name="Help_About_NEON_url">http://www.neoninc.org</string>
-<string name="Help_About_para0">Please note: data collected using this mobile app is being temporarily sent to a different location than the official Project BudBurst site!\n\nAll images and data submitted is publicly available and no copyright occurs.</string>
+<string name="Help_About_para0">Please note: data collected using this mobile app is being temporarily sent to a different database than the official Project BudBurst site (but will be merged)!\n\nAll images and data submitted is publicly available and no copyright can be claimed.</string>
 <string name="Help_About_para0_url"></string>
 <string name="InValid_ID_PW">Incorrect Username/Password. Please try again.</string>
 <string name="Menu_Lists">Plant Lists</string>
