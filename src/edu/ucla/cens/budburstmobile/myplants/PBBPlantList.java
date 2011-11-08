@@ -1234,9 +1234,9 @@ public class PBBPlantList extends ListActivity {
 						icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.unsynced));
 					}
 					
-					if(arSrc.get(position).getIsFloracache() != 0) {
-						icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.is_floracache));
-					}
+					//if(arSrc.get(position).getIsFloracache() != 0) {
+					//	icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.is_floracache));
+					//}
 					break;
 				case HelperValues.LOCAL_POISONOUS_LIST:
 					Log.i("K", "PBBPlantList(Picture, ImageID) : " + arSrc.get(position).getPicture() 
@@ -1249,9 +1249,9 @@ public class PBBPlantList extends ListActivity {
 						icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.unsynced));
 					}
 					
-					if(arSrc.get(position).getIsFloracache() != 0) {
-						icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.is_floracache));
-					}
+					//if(arSrc.get(position).getIsFloracache() != 0) {
+					//	icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.is_floracache));
+					//}
 					break;
 				case HelperValues.LOCAL_THREATENED_ENDANGERED_LIST:
 					Log.i("K", "PBBPlantList(Picture, ImageID) : " + arSrc.get(position).getPicture() 
@@ -1264,9 +1264,9 @@ public class PBBPlantList extends ListActivity {
 						icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.unsynced));
 					}
 					
-					if(arSrc.get(position).getIsFloracache() != 0) {
-						icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.is_floracache));
-					}
+					//if(arSrc.get(position).getIsFloracache() != 0) {
+					//	icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.is_floracache));
+					//}
 					break;
 				default:
 					// Call images from the TREE_PATH
@@ -1290,9 +1290,9 @@ public class PBBPlantList extends ListActivity {
 						icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.unsynced));
 					}
 					
-					if(arSrc.get(position).getIsFloracache() != 0) {
-						icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.is_floracache));
-					}
+					//if(arSrc.get(position).getIsFloracache() != 0) {
+					//	icon = mHelper.overlay(icon, BitmapFactory.decodeResource(getResources(), R.drawable.is_floracache));
+					//}
 					break;
 				}				
 		
